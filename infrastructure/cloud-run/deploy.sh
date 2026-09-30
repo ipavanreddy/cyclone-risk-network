@@ -51,17 +51,17 @@ fi
 
 secret_exists() { gcloud secrets describe "$1" --project "$PROJECT" >/dev/null 2>&1; }
 
-build() {  # build <image-name> <dockerfile> [app]
+build() {  # build <image-name> <dockerfile> [app]; exits on failure (errexit is off inside $(...))
   local image="${REGISTRY}/${PREFIX}-$1:${TAG}"
   gcloud builds submit "$ROOT" --project "$PROJECT" --region "$REGION" --quiet \
     --config infrastructure/cloud-run/cloudbuild.yaml \
-    --substitutions "_IMAGE=${image},_DOCKERFILE=$2,_APP=${3:-}" >&2
+    --substitutions "_IMAGE=${image},_DOCKERFILE=$2,_APP=${3:-}" >&2 || exit 1
   echo "$image"
 }
 
 deploy_api() {
   local image secrets env
-  image="$(build api services/api/Dockerfile)"
+  image="$(build api services/api/Dockerfile)" || exit 1
   secrets="MAPS_API_KEY=maps-api-key:latest,GOOGLE_CLOUD_API_KEY=google-api-key:latest"
   if secret_exists gemini-api-key; then secrets+=",GEMINI_API_KEY=gemini-api-key:latest"; fi
   env="GOOGLE_CLOUD_PROJECT=${PROJECT},GOOGLE_CLOUD_LOCATION=${REGION},GEMINI_LOCATION=${GEMINI_LOCATION}"
@@ -82,7 +82,7 @@ deploy_web() {  # deploy_web <app folder>
   key="${NEXT_PUBLIC_MAPS_API_KEY:-$(grep -s '^NEXT_PUBLIC_MAPS_API_KEY=' "apps/${app}/.env.local" | cut -d= -f2- || true)}"
   trap 'rm -f "$envfile"' RETURN
   printf 'NEXT_PUBLIC_API_URL=%s\nNEXT_PUBLIC_MAPS_API_KEY=%s\n' "$API_URL" "$key" > "$envfile"
-  image="$(build "$app" infrastructure/cloud-run/Dockerfile.web "$app")"
+  image="$(build "$app" infrastructure/cloud-run/Dockerfile.web "$app")" || exit 1
   gcloud run deploy "${PREFIX}-${app}" --project "$PROJECT" --region "$REGION" --image "$image" \
     --service-account "$SA" --allow-unauthenticated --port 8080 \
     --cpu 1 --memory 512Mi --min-instances 0 --max-instances 3 --cpu-boost \
