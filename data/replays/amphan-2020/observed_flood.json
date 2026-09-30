@@ -1,0 +1,108 @@
+{
+ "metadata": {
+  "source": "Sample 'observed' flood points for replay validation; real mode uses Sentinel-1 SAR change detection in Earth Engine.",
+  "reference_timestamp": "2026-09-30T00:00:00+05:30",
+  "dataset_version": "replay-sample-v1",
+  "geographic_scope": "South 24 Parganas, West Bengal (replay bbox)",
+  "is_sample": true,
+  "is_synthetic": true
+ },
+ "villages": [
+  {
+   "village_code": "SAMPLE-WB-AMPH-001",
+   "observed_flooded": true
+  },
+  {
+   "village_code": "SAMPLE-WB-AMPH-002",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-WB-AMPH-003",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-WB-AMPH-004",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-WB-AMPH-005",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-WB-AMPH-006",
+   "observed_flooded": true
+  },
+  {
+   "village_code": "SAMPLE-WB-AMPH-007",
+   "observed_flooded": true
+  },
+  {
+   "village_code": "SAMPLE-WB-AMPH-008",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-WB-AMPH-009",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-WB-AMPH-010",
+   "observed_flooded": true
+  },
+  {
+   "village_code": "SAMPLE-WB-AMPH-011",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-WB-AMPH-012",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-WB-AMPH-013",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-WB-AMPH-014",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-WB-AMPH-015",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-WB-AMPH-016",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-WB-AMPH-017",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-WB-AMPH-018",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-WB-AMPH-019",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-WB-AMPH-020",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-WB-AMPH-021",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-WB-AMPH-022",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-WB-AMPH-023",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-WB-AMPH-024",
+   "observed_flooded": false
+  }
+ ]
+}

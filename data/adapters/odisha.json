@@ -1,0 +1,19 @@
+{
+  "state": "OD",
+  "state_name": "Odisha",
+  "country": "IN",
+  "districts": ["Puri"],
+  "default_district": "Puri",
+  "replays": ["fani-2019"],
+  "languages": ["en", "or"],
+  "primary_language": "or",
+  "admin_units": {"level_1": "State", "level_2": "District", "level_3": "Block", "level_4": "Village"},
+  "issuing_authority": "Collector & District Magistrate, Puri (District Disaster Management Authority)",
+  "cap_sender": "ddma-puri@sample.tatraksha.invalid",
+  "alert_gateway": "Sample: Odisha SATARK / NDMA CAP gateway (not connected in MVP)",
+  "forecast_source": "IMD RSMC New Delhi bulletins (replay sample)",
+  "risk_weights": {"surge": 0.30, "flood": 0.25, "wind": 0.15, "population": 0.15, "vulnerability": 0.15},
+  "village_field_map": {},
+  "metadata": {"source": "TatRaksha state adapter config", "reference_timestamp": "2026-09-30T00:00:00+05:30",
+               "dataset_version": "adapter-v1", "geographic_scope": "Odisha", "is_sample": true}
+}

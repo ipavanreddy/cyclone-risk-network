@@ -1,0 +1,247 @@
+{
+  "$defs": {
+    "AdvisoryDraftBrief": {
+      "properties": {
+        "audience": {
+          "title": "Audience",
+          "type": "string"
+        },
+        "language": {
+          "title": "Language",
+          "type": "string"
+        },
+        "stage": {
+          "title": "Stage",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "audience",
+        "language",
+        "stage",
+        "text"
+      ],
+      "title": "AdvisoryDraftBrief",
+      "type": "object"
+    },
+    "KeyNumbers": {
+      "properties": {
+        "people_high_risk": {
+          "title": "People High Risk",
+          "type": "integer"
+        },
+        "villages_high_risk": {
+          "title": "Villages High Risk",
+          "type": "integer"
+        },
+        "people_in_surge_zone": {
+          "title": "People In Surge Zone",
+          "type": "integer"
+        },
+        "substations_exposed": {
+          "title": "Substations Exposed",
+          "type": "integer"
+        },
+        "hospitals_exposed": {
+          "title": "Hospitals Exposed",
+          "type": "integer"
+        },
+        "shelters_exposed": {
+          "title": "Shelters Exposed",
+          "type": "integer"
+        },
+        "shelters_cut_off": {
+          "title": "Shelters Cut Off",
+          "type": "integer"
+        },
+        "villages_without_reachable_shelter": {
+          "title": "Villages Without Reachable Shelter",
+          "type": "integer"
+        },
+        "roads_cut": {
+          "title": "Roads Cut",
+          "type": "integer"
+        },
+        "evacuation_demand": {
+          "title": "Evacuation Demand",
+          "type": "integer"
+        },
+        "reachable_shelter_capacity": {
+          "title": "Reachable Shelter Capacity",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "people_high_risk",
+        "villages_high_risk",
+        "people_in_surge_zone",
+        "substations_exposed",
+        "hospitals_exposed",
+        "shelters_exposed",
+        "shelters_cut_off",
+        "villages_without_reachable_shelter",
+        "roads_cut",
+        "evacuation_demand",
+        "reachable_shelter_capacity"
+      ],
+      "title": "KeyNumbers",
+      "type": "object"
+    },
+    "PriorityVillage": {
+      "properties": {
+        "village_code": {
+          "title": "Village Code",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "risk_score": {
+          "title": "Risk Score",
+          "type": "integer"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "village_code",
+        "name",
+        "risk_score",
+        "reason"
+      ],
+      "title": "PriorityVillage",
+      "type": "object"
+    },
+    "RoleAction": {
+      "properties": {
+        "role": {
+          "title": "Role",
+          "type": "string"
+        },
+        "action": {
+          "title": "Action",
+          "type": "string"
+        },
+        "deadline_hours_before_landfall": {
+          "title": "Deadline Hours Before Landfall",
+          "type": "integer"
+        },
+        "evidence": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence",
+          "type": "array"
+        }
+      },
+      "required": [
+        "role",
+        "action",
+        "deadline_hours_before_landfall",
+        "evidence"
+      ],
+      "title": "RoleAction",
+      "type": "object"
+    },
+    "ShelterNote": {
+      "properties": {
+        "asset_id": {
+          "title": "Asset Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "issue": {
+          "title": "Issue",
+          "type": "string"
+        },
+        "recommendation": {
+          "title": "Recommendation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "asset_id",
+        "name",
+        "issue",
+        "recommendation"
+      ],
+      "title": "ShelterNote",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "headline": {
+      "title": "Headline",
+      "type": "string"
+    },
+    "confidence": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "title": "Confidence",
+      "type": "string"
+    },
+    "key_numbers": {
+      "$ref": "#/$defs/KeyNumbers"
+    },
+    "actions": {
+      "items": {
+        "$ref": "#/$defs/RoleAction"
+      },
+      "title": "Actions",
+      "type": "array"
+    },
+    "priority_villages": {
+      "items": {
+        "$ref": "#/$defs/PriorityVillage"
+      },
+      "title": "Priority Villages",
+      "type": "array"
+    },
+    "shelters_attention": {
+      "items": {
+        "$ref": "#/$defs/ShelterNote"
+      },
+      "title": "Shelters Attention",
+      "type": "array"
+    },
+    "uncertainties": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Uncertainties",
+      "type": "array"
+    },
+    "advisory_drafts": {
+      "items": {
+        "$ref": "#/$defs/AdvisoryDraftBrief"
+      },
+      "title": "Advisory Drafts",
+      "type": "array"
+    }
+  },
+  "required": [
+    "headline",
+    "confidence",
+    "key_numbers",
+    "actions",
+    "priority_villages",
+    "shelters_attention",
+    "uncertainties",
+    "advisory_drafts"
+  ],
+  "title": "SituationReport",
+  "type": "object"
+}

@@ -1,0 +1,846 @@
+{
+ "metadata": {
+  "source": "Simplified sample road network between real place names (straight segments). Real mode: OpenStreetMap highways.",
+  "reference_timestamp": "2026-09-30T00:00:00+05:30",
+  "dataset_version": "replay-sample-v1",
+  "geographic_scope": "South 24 Parganas, West Bengal (replay bbox)",
+  "is_sample": true,
+  "is_synthetic": false
+ },
+ "nodes": [
+  {
+   "id": "SAMPLE-WB-AMPH-001",
+   "kind": "village",
+   "lat": 21.65,
+   "lon": 88.08
+  },
+  {
+   "id": "SAMPLE-WB-AMPH-002",
+   "kind": "village",
+   "lat": 21.75,
+   "lon": 88.1
+  },
+  {
+   "id": "SAMPLE-WB-AMPH-003",
+   "kind": "village",
+   "lat": 21.91,
+   "lon": 88.125
+  },
+  {
+   "id": "SAMPLE-WB-AMPH-004",
+   "kind": "village",
+   "lat": 21.87,
+   "lon": 88.19
+  },
+  {
+   "id": "SAMPLE-WB-AMPH-005",
+   "kind": "village",
+   "lat": 21.77,
+   "lon": 88.23
+  },
+  {
+   "id": "SAMPLE-WB-AMPH-006",
+   "kind": "village",
+   "lat": 21.6,
+   "lon": 88.245
+  },
+  {
+   "id": "SAMPLE-WB-AMPH-007",
+   "kind": "village",
+   "lat": 21.575,
+   "lon": 88.265
+  },
+  {
+   "id": "SAMPLE-WB-AMPH-008",
+   "kind": "village",
+   "lat": 21.66,
+   "lon": 88.2
+  },
+  {
+   "id": "SAMPLE-WB-AMPH-009",
+   "kind": "village",
+   "lat": 21.79,
+   "lon": 88.36
+  },
+  {
+   "id": "SAMPLE-WB-AMPH-010",
+   "kind": "village",
+   "lat": 21.62,
+   "lon": 88.39
+  },
+  {
+   "id": "SAMPLE-WB-AMPH-011",
+   "kind": "village",
+   "lat": 21.97,
+   "lon": 88.43
+  },
+  {
+   "id": "SAMPLE-WB-AMPH-012",
+   "kind": "village",
+   "lat": 22.05,
+   "lon": 88.56
+  },
+  {
+   "id": "SAMPLE-WB-AMPH-013",
+   "kind": "village",
+   "lat": 22.12,
+   "lon": 88.37
+  },
+  {
+   "id": "SAMPLE-WB-AMPH-014",
+   "kind": "village",
+   "lat": 22.19,
+   "lon": 88.19
+  },
+  {
+   "id": "SAMPLE-WB-AMPH-015",
+   "kind": "village",
+   "lat": 22.08,
+   "lon": 88.24
+  },
+  {
+   "id": "SAMPLE-WB-AMPH-016",
+   "kind": "village",
+   "lat": 22.17,
+   "lon": 88.42
+  },
+  {
+   "id": "SAMPLE-WB-AMPH-017",
+   "kind": "village",
+   "lat": 22.31,
+   "lon": 88.67
+  },
+  {
+   "id": "SAMPLE-WB-AMPH-018",
+   "kind": "village",
+   "lat": 22.19,
+   "lon": 88.67
+  },
+  {
+   "id": "SAMPLE-WB-AMPH-019",
+   "kind": "village",
+   "lat": 22.16,
+   "lon": 88.8
+  },
+  {
+   "id": "SAMPLE-WB-AMPH-020",
+   "kind": "village",
+   "lat": 22.1,
+   "lon": 88.87
+  },
+  {
+   "id": "SAMPLE-WB-AMPH-021",
+   "kind": "village",
+   "lat": 22.12,
+   "lon": 88.83
+  },
+  {
+   "id": "SAMPLE-WB-AMPH-022",
+   "kind": "village",
+   "lat": 22.02,
+   "lon": 88.69
+  },
+  {
+   "id": "SAMPLE-WB-AMPH-023",
+   "kind": "village",
+   "lat": 21.94,
+   "lon": 88.59
+  },
+  {
+   "id": "SAMPLE-WB-AMPH-024",
+   "kind": "village",
+   "lat": 22.36,
+   "lon": 88.43
+  },
+  {
+   "id": "HUB-S24P-BARUIPUR",
+   "kind": "hub",
+   "lat": 22.36,
+   "lon": 88.43
+  },
+  {
+   "id": "SH-WB-001",
+   "kind": "shelter",
+   "lat": 21.6551,
+   "lon": 88.0777
+  },
+  {
+   "id": "SH-WB-002",
+   "kind": "shelter",
+   "lat": 21.7585,
+   "lon": 88.0973
+  },
+  {
+   "id": "SH-WB-003",
+   "kind": "shelter",
+   "lat": 21.8784,
+   "lon": 88.1902
+  },
+  {
+   "id": "SH-WB-004",
+   "kind": "shelter",
+   "lat": 21.7747,
+   "lon": 88.2317
+  },
+  {
+   "id": "SH-WB-005",
+   "kind": "shelter",
+   "lat": 21.6061,
+   "lon": 88.2476
+  },
+  {
+   "id": "SH-WB-006",
+   "kind": "shelter",
+   "lat": 21.6651,
+   "lon": 88.1999
+  },
+  {
+   "id": "SH-WB-007",
+   "kind": "shelter",
+   "lat": 21.7991,
+   "lon": 88.359
+  },
+  {
+   "id": "SH-WB-008",
+   "kind": "shelter",
+   "lat": 21.6267,
+   "lon": 88.3899
+  },
+  {
+   "id": "SH-WB-009",
+   "kind": "shelter",
+   "lat": 21.9798,
+   "lon": 88.4328
+  },
+  {
+   "id": "SH-WB-010",
+   "kind": "shelter",
+   "lat": 22.0548,
+   "lon": 88.5591
+  },
+  {
+   "id": "SH-WB-011",
+   "kind": "shelter",
+   "lat": 22.127,
+   "lon": 88.3692
+  },
+  {
+   "id": "SH-WB-012",
+   "kind": "shelter",
+   "lat": 22.1958,
+   "lon": 88.1884
+  },
+  {
+   "id": "SH-WB-013",
+   "kind": "shelter",
+   "lat": 22.3179,
+   "lon": 88.6701
+  },
+  {
+   "id": "SH-WB-014",
+   "kind": "shelter",
+   "lat": 22.1996,
+   "lon": 88.6675
+  },
+  {
+   "id": "SH-WB-015",
+   "kind": "shelter",
+   "lat": 22.1693,
+   "lon": 88.7991
+  },
+  {
+   "id": "SH-WB-016",
+   "kind": "shelter",
+   "lat": 22.1272,
+   "lon": 88.8316
+  },
+  {
+   "id": "SH-WB-017",
+   "kind": "shelter",
+   "lat": 22.027,
+   "lon": 88.6879
+  },
+  {
+   "id": "SH-WB-018",
+   "kind": "shelter",
+   "lat": 21.9473,
+   "lon": 88.5914
+  },
+  {
+   "id": "SS-WB-001",
+   "kind": "substation",
+   "lat": 21.867,
+   "lon": 88.194
+  },
+  {
+   "id": "SS-WB-002",
+   "kind": "substation",
+   "lat": 21.767,
+   "lon": 88.234
+  },
+  {
+   "id": "SS-WB-003",
+   "kind": "substation",
+   "lat": 21.787,
+   "lon": 88.364
+  },
+  {
+   "id": "SS-WB-004",
+   "kind": "substation",
+   "lat": 22.187,
+   "lon": 88.194
+  },
+  {
+   "id": "SS-WB-005",
+   "kind": "substation",
+   "lat": 22.307,
+   "lon": 88.674
+  },
+  {
+   "id": "SS-WB-006",
+   "kind": "substation",
+   "lat": 22.157,
+   "lon": 88.804
+  },
+  {
+   "id": "SS-WB-007",
+   "kind": "substation",
+   "lat": 22.357,
+   "lon": 88.434
+  },
+  {
+   "id": "SS-WB-008",
+   "kind": "substation",
+   "lat": 21.967,
+   "lon": 88.434
+  },
+  {
+   "id": "SS-WB-009",
+   "kind": "substation",
+   "lat": 21.747,
+   "lon": 88.104
+  },
+  {
+   "id": "HS-WB-001",
+   "kind": "hospital",
+   "lat": 22.192,
+   "lon": 88.187
+  },
+  {
+   "id": "HS-WB-002",
+   "kind": "hospital",
+   "lat": 21.872,
+   "lon": 88.187
+  },
+  {
+   "id": "HS-WB-003",
+   "kind": "hospital",
+   "lat": 22.312,
+   "lon": 88.667
+  },
+  {
+   "id": "HS-WB-004",
+   "kind": "hospital",
+   "lat": 21.752,
+   "lon": 88.097
+  },
+  {
+   "id": "HS-WB-005",
+   "kind": "hospital",
+   "lat": 21.792,
+   "lon": 88.357
+  },
+  {
+   "id": "HS-WB-006",
+   "kind": "hospital",
+   "lat": 22.162,
+   "lon": 88.797
+  },
+  {
+   "id": "HS-WB-007",
+   "kind": "hospital",
+   "lat": 21.772,
+   "lon": 88.227
+  },
+  {
+   "id": "HS-WB-008",
+   "kind": "hospital",
+   "lat": 22.192,
+   "lon": 88.667
+  }
+ ],
+ "edges": [
+  {
+   "edge_id": "E0001",
+   "from": "SAMPLE-WB-AMPH-024",
+   "to": "SAMPLE-WB-AMPH-016",
+   "road": "Diamond Harbour Road (NH-12)",
+   "kind": "arterial",
+   "length_km": 25.38
+  },
+  {
+   "edge_id": "E0002",
+   "from": "SAMPLE-WB-AMPH-016",
+   "to": "SAMPLE-WB-AMPH-013",
+   "road": "Diamond Harbour Road (NH-12)",
+   "kind": "arterial",
+   "length_km": 9.09
+  },
+  {
+   "edge_id": "E0003",
+   "from": "SAMPLE-WB-AMPH-013",
+   "to": "SAMPLE-WB-AMPH-014",
+   "road": "Diamond Harbour Road (NH-12)",
+   "kind": "arterial",
+   "length_km": 24.13
+  },
+  {
+   "edge_id": "E0004",
+   "from": "SAMPLE-WB-AMPH-014",
+   "to": "SAMPLE-WB-AMPH-015",
+   "road": "Diamond Harbour Road (NH-12)",
+   "kind": "arterial",
+   "length_km": 15.93
+  },
+  {
+   "edge_id": "E0005",
+   "from": "SAMPLE-WB-AMPH-015",
+   "to": "SAMPLE-WB-AMPH-004",
+   "road": "Diamond Harbour Road (NH-12)",
+   "kind": "arterial",
+   "length_km": 28.7
+  },
+  {
+   "edge_id": "E0006",
+   "from": "SAMPLE-WB-AMPH-004",
+   "to": "SAMPLE-WB-AMPH-005",
+   "road": "Diamond Harbour Road (NH-12)",
+   "kind": "arterial",
+   "length_km": 14.23
+  },
+  {
+   "edge_id": "E0007",
+   "from": "SAMPLE-WB-AMPH-005",
+   "to": "SAMPLE-WB-AMPH-006",
+   "road": "Diamond Harbour Road (NH-12)",
+   "kind": "arterial",
+   "length_km": 22.76
+  },
+  {
+   "edge_id": "E0008",
+   "from": "SAMPLE-WB-AMPH-006",
+   "to": "SAMPLE-WB-AMPH-007",
+   "road": "Diamond Harbour Road (NH-12)",
+   "kind": "arterial",
+   "length_km": 4.16
+  },
+  {
+   "edge_id": "E0009",
+   "from": "SAMPLE-WB-AMPH-013",
+   "to": "SAMPLE-WB-AMPH-011",
+   "road": "Mathurapur–Raidighi road",
+   "kind": "arterial",
+   "length_km": 21.35
+  },
+  {
+   "edge_id": "E0010",
+   "from": "SAMPLE-WB-AMPH-011",
+   "to": "SAMPLE-WB-AMPH-009",
+   "road": "Mathurapur–Raidighi road",
+   "kind": "arterial",
+   "length_km": 25.54
+  },
+  {
+   "edge_id": "E0011",
+   "from": "SAMPLE-WB-AMPH-009",
+   "to": "SAMPLE-WB-AMPH-010",
+   "road": "Mathurapur–Raidighi road",
+   "kind": "arterial",
+   "length_km": 22.99
+  },
+  {
+   "edge_id": "E0012",
+   "from": "SAMPLE-WB-AMPH-004",
+   "to": "SAMPLE-WB-AMPH-002",
+   "road": "Sagar island road",
+   "kind": "arterial",
+   "length_km": 19.51
+  },
+  {
+   "edge_id": "E0013",
+   "from": "SAMPLE-WB-AMPH-002",
+   "to": "SAMPLE-WB-AMPH-001",
+   "road": "Sagar island road",
+   "kind": "arterial",
+   "length_km": 13.57
+  },
+  {
+   "edge_id": "E0014",
+   "from": "SAMPLE-WB-AMPH-024",
+   "to": "SAMPLE-WB-AMPH-017",
+   "road": "Baruipur–Canning road",
+   "kind": "arterial",
+   "length_km": 30.37
+  },
+  {
+   "edge_id": "E0015",
+   "from": "SAMPLE-WB-AMPH-017",
+   "to": "SAMPLE-WB-AMPH-018",
+   "road": "Baruipur–Canning road",
+   "kind": "arterial",
+   "length_km": 16.01
+  },
+  {
+   "edge_id": "E0016",
+   "from": "SAMPLE-WB-AMPH-018",
+   "to": "SAMPLE-WB-AMPH-019",
+   "road": "Baruipur–Canning road",
+   "kind": "arterial",
+   "length_km": 16.56
+  },
+  {
+   "edge_id": "E0017",
+   "from": "SAMPLE-WB-AMPH-019",
+   "to": "SAMPLE-WB-AMPH-021",
+   "road": "Baruipur–Canning road",
+   "kind": "arterial",
+   "length_km": 6.5
+  },
+  {
+   "edge_id": "E0018",
+   "from": "SAMPLE-WB-AMPH-021",
+   "to": "SAMPLE-WB-AMPH-020",
+   "road": "Baruipur–Canning road",
+   "kind": "arterial",
+   "length_km": 5.62
+  },
+  {
+   "edge_id": "E0019",
+   "from": "SAMPLE-WB-AMPH-016",
+   "to": "SAMPLE-WB-AMPH-012",
+   "road": "Jaynagar–Kultali road",
+   "kind": "arterial",
+   "length_km": 23.58
+  },
+  {
+   "edge_id": "E0020",
+   "from": "SAMPLE-WB-AMPH-012",
+   "to": "SAMPLE-WB-AMPH-023",
+   "road": "Jaynagar–Kultali road",
+   "kind": "arterial",
+   "length_km": 15.14
+  },
+  {
+   "edge_id": "E0021",
+   "from": "SAMPLE-WB-AMPH-017",
+   "to": "SAMPLE-WB-AMPH-022",
+   "road": "Canning–Jharkhali road",
+   "kind": "arterial",
+   "length_km": 38.78
+  },
+  {
+   "edge_id": "E0022",
+   "from": "SAMPLE-WB-AMPH-005",
+   "to": "SAMPLE-WB-AMPH-008",
+   "road": "Namkhana–Mousuni ferry road",
+   "kind": "arterial",
+   "length_km": 15.14
+  },
+  {
+   "edge_id": "E0023",
+   "from": "SAMPLE-WB-AMPH-004",
+   "to": "SAMPLE-WB-AMPH-003",
+   "road": "Kakdwip–Ghoramara jetty",
+   "kind": "arterial",
+   "length_km": 9.66
+  },
+  {
+   "edge_id": "E0024",
+   "from": "HUB-S24P-BARUIPUR",
+   "to": "SAMPLE-WB-AMPH-024",
+   "road": "Depot access road",
+   "kind": "local",
+   "length_km": 0.0
+  },
+  {
+   "edge_id": "E0025",
+   "from": "SAMPLE-WB-AMPH-001",
+   "to": "SH-WB-001",
+   "road": "Access road to SH-WB-001",
+   "kind": "local",
+   "length_km": 0.74
+  },
+  {
+   "edge_id": "E0026",
+   "from": "SAMPLE-WB-AMPH-002",
+   "to": "SH-WB-002",
+   "road": "Access road to SH-WB-002",
+   "kind": "local",
+   "length_km": 1.18
+  },
+  {
+   "edge_id": "E0027",
+   "from": "SAMPLE-WB-AMPH-004",
+   "to": "SH-WB-003",
+   "road": "Access road to SH-WB-003",
+   "kind": "local",
+   "length_km": 1.12
+  },
+  {
+   "edge_id": "E0028",
+   "from": "SAMPLE-WB-AMPH-005",
+   "to": "SH-WB-004",
+   "road": "Access road to SH-WB-004",
+   "kind": "local",
+   "length_km": 0.66
+  },
+  {
+   "edge_id": "E0029",
+   "from": "SAMPLE-WB-AMPH-006",
+   "to": "SH-WB-005",
+   "road": "Access road to SH-WB-005",
+   "kind": "local",
+   "length_km": 0.88
+  },
+  {
+   "edge_id": "E0030",
+   "from": "SAMPLE-WB-AMPH-008",
+   "to": "SH-WB-006",
+   "road": "Access road to SH-WB-006",
+   "kind": "local",
+   "length_km": 0.68
+  },
+  {
+   "edge_id": "E0031",
+   "from": "SAMPLE-WB-AMPH-009",
+   "to": "SH-WB-007",
+   "road": "Access road to SH-WB-007",
+   "kind": "local",
+   "length_km": 1.22
+  },
+  {
+   "edge_id": "E0032",
+   "from": "SAMPLE-WB-AMPH-010",
+   "to": "SH-WB-008",
+   "road": "Access road to SH-WB-008",
+   "kind": "local",
+   "length_km": 0.89
+  },
+  {
+   "edge_id": "E0033",
+   "from": "SAMPLE-WB-AMPH-011",
+   "to": "SH-WB-009",
+   "road": "Access road to SH-WB-009",
+   "kind": "local",
+   "length_km": 1.35
+  },
+  {
+   "edge_id": "E0034",
+   "from": "SAMPLE-WB-AMPH-012",
+   "to": "SH-WB-010",
+   "road": "Access road to SH-WB-010",
+   "kind": "local",
+   "length_km": 0.65
+  },
+  {
+   "edge_id": "E0035",
+   "from": "SAMPLE-WB-AMPH-013",
+   "to": "SH-WB-011",
+   "road": "Access road to SH-WB-011",
+   "kind": "local",
+   "length_km": 0.94
+  },
+  {
+   "edge_id": "E0036",
+   "from": "SAMPLE-WB-AMPH-014",
+   "to": "SH-WB-012",
+   "road": "Access road to SH-WB-012",
+   "kind": "local",
+   "length_km": 0.8
+  },
+  {
+   "edge_id": "E0037",
+   "from": "SAMPLE-WB-AMPH-017",
+   "to": "SH-WB-013",
+   "road": "Access road to SH-WB-013",
+   "kind": "local",
+   "length_km": 1.05
+  },
+  {
+   "edge_id": "E0038",
+   "from": "SAMPLE-WB-AMPH-018",
+   "to": "SH-WB-014",
+   "road": "Access road to SH-WB-014",
+   "kind": "local",
+   "length_km": 1.32
+  },
+  {
+   "edge_id": "E0039",
+   "from": "SAMPLE-WB-AMPH-019",
+   "to": "SH-WB-015",
+   "road": "Access road to SH-WB-015",
+   "kind": "local",
+   "length_km": 1.25
+  },
+  {
+   "edge_id": "E0040",
+   "from": "SAMPLE-WB-AMPH-021",
+   "to": "SH-WB-016",
+   "road": "Access road to SH-WB-016",
+   "kind": "local",
+   "length_km": 0.98
+  },
+  {
+   "edge_id": "E0041",
+   "from": "SAMPLE-WB-AMPH-022",
+   "to": "SH-WB-017",
+   "road": "Access road to SH-WB-017",
+   "kind": "local",
+   "length_km": 0.97
+  },
+  {
+   "edge_id": "E0042",
+   "from": "SAMPLE-WB-AMPH-023",
+   "to": "SH-WB-018",
+   "road": "Access road to SH-WB-018",
+   "kind": "local",
+   "length_km": 0.99
+  },
+  {
+   "edge_id": "E0043",
+   "from": "SAMPLE-WB-AMPH-004",
+   "to": "SS-WB-001",
+   "road": "Access road to SS-WB-001",
+   "kind": "local",
+   "length_km": 0.64
+  },
+  {
+   "edge_id": "E0044",
+   "from": "SAMPLE-WB-AMPH-005",
+   "to": "SS-WB-002",
+   "road": "Access road to SS-WB-002",
+   "kind": "local",
+   "length_km": 0.64
+  },
+  {
+   "edge_id": "E0045",
+   "from": "SAMPLE-WB-AMPH-009",
+   "to": "SS-WB-003",
+   "road": "Access road to SS-WB-003",
+   "kind": "local",
+   "length_km": 0.64
+  },
+  {
+   "edge_id": "E0046",
+   "from": "SAMPLE-WB-AMPH-014",
+   "to": "SS-WB-004",
+   "road": "Access road to SS-WB-004",
+   "kind": "local",
+   "length_km": 0.64
+  },
+  {
+   "edge_id": "E0047",
+   "from": "SAMPLE-WB-AMPH-017",
+   "to": "SS-WB-005",
+   "road": "Access road to SS-WB-005",
+   "kind": "local",
+   "length_km": 0.64
+  },
+  {
+   "edge_id": "E0048",
+   "from": "SAMPLE-WB-AMPH-019",
+   "to": "SS-WB-006",
+   "road": "Access road to SS-WB-006",
+   "kind": "local",
+   "length_km": 0.64
+  },
+  {
+   "edge_id": "E0049",
+   "from": "SAMPLE-WB-AMPH-024",
+   "to": "SS-WB-007",
+   "road": "Access road to SS-WB-007",
+   "kind": "local",
+   "length_km": 0.64
+  },
+  {
+   "edge_id": "E0050",
+   "from": "SAMPLE-WB-AMPH-011",
+   "to": "SS-WB-008",
+   "road": "Access road to SS-WB-008",
+   "kind": "local",
+   "length_km": 0.64
+  },
+  {
+   "edge_id": "E0051",
+   "from": "SAMPLE-WB-AMPH-002",
+   "to": "SS-WB-009",
+   "road": "Access road to SS-WB-009",
+   "kind": "local",
+   "length_km": 0.64
+  },
+  {
+   "edge_id": "E0052",
+   "from": "SAMPLE-WB-AMPH-014",
+   "to": "HS-WB-001",
+   "road": "Access road to HS-WB-001",
+   "kind": "local",
+   "length_km": 0.46
+  },
+  {
+   "edge_id": "E0053",
+   "from": "SAMPLE-WB-AMPH-004",
+   "to": "HS-WB-002",
+   "road": "Access road to HS-WB-002",
+   "kind": "local",
+   "length_km": 0.46
+  },
+  {
+   "edge_id": "E0054",
+   "from": "SAMPLE-WB-AMPH-017",
+   "to": "HS-WB-003",
+   "road": "Access road to HS-WB-003",
+   "kind": "local",
+   "length_km": 0.46
+  },
+  {
+   "edge_id": "E0055",
+   "from": "SAMPLE-WB-AMPH-002",
+   "to": "HS-WB-004",
+   "road": "Access road to HS-WB-004",
+   "kind": "local",
+   "length_km": 0.46
+  },
+  {
+   "edge_id": "E0056",
+   "from": "SAMPLE-WB-AMPH-009",
+   "to": "HS-WB-005",
+   "road": "Access road to HS-WB-005",
+   "kind": "local",
+   "length_km": 0.46
+  },
+  {
+   "edge_id": "E0057",
+   "from": "SAMPLE-WB-AMPH-019",
+   "to": "HS-WB-006",
+   "road": "Access road to HS-WB-006",
+   "kind": "local",
+   "length_km": 0.46
+  },
+  {
+   "edge_id": "E0058",
+   "from": "SAMPLE-WB-AMPH-005",
+   "to": "HS-WB-007",
+   "road": "Access road to HS-WB-007",
+   "kind": "local",
+   "length_km": 0.46
+  },
+  {
+   "edge_id": "E0059",
+   "from": "SAMPLE-WB-AMPH-018",
+   "to": "HS-WB-008",
+   "road": "Access road to HS-WB-008",
+   "kind": "local",
+   "length_km": 0.46
+  }
+ ]
+}

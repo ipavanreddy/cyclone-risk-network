@@ -1,0 +1,132 @@
+{
+ "metadata": {
+  "source": "Sample 'observed' flood points for replay validation; real mode uses Sentinel-1 SAR change detection in Earth Engine.",
+  "reference_timestamp": "2026-09-30T00:00:00+05:30",
+  "dataset_version": "replay-sample-v1",
+  "geographic_scope": "Puri, Odisha (replay bbox)",
+  "is_sample": true,
+  "is_synthetic": true
+ },
+ "villages": [
+  {
+   "village_code": "SAMPLE-OD-FANI-001",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-002",
+   "observed_flooded": true
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-003",
+   "observed_flooded": true
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-004",
+   "observed_flooded": true
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-005",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-006",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-007",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-008",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-009",
+   "observed_flooded": true
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-010",
+   "observed_flooded": true
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-011",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-012",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-013",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-014",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-015",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-016",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-017",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-018",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-019",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-020",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-021",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-022",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-023",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-024",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-025",
+   "observed_flooded": true
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-026",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-027",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-028",
+   "observed_flooded": true
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-029",
+   "observed_flooded": false
+  },
+  {
+   "village_code": "SAMPLE-OD-FANI-030",
+   "observed_flooded": false
+  }
+ ]
+}

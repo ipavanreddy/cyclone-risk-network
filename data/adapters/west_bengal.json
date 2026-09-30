@@ -1,0 +1,22 @@
+{
+  "state": "WB",
+  "state_name": "West Bengal",
+  "country": "IN",
+  "districts": ["South 24 Parganas"],
+  "default_district": "South 24 Parganas",
+  "replays": ["amphan-2020"],
+  "languages": ["en", "bn"],
+  "primary_language": "bn",
+  "admin_units": {"level_1": "State", "level_2": "District", "level_3": "CD Block", "level_4": "Mouza"},
+  "issuing_authority": "District Magistrate, South 24 Parganas (District Disaster Management Authority)",
+  "cap_sender": "ddma-s24p@sample.tatraksha.invalid",
+  "alert_gateway": "Sample: West Bengal state alert gateway (not connected in MVP)",
+  "forecast_source": "IMD RSMC New Delhi bulletins (replay sample)",
+  "risk_weights": {"surge": 0.30, "flood": 0.25, "wind": 0.15, "population": 0.15, "vulnerability": 0.15},
+  "village_field_map": {
+    "village_code": "mouza_code", "name": "mouza_name", "block": "cd_block", "population": "pop_sample",
+    "vulnerability_index": "svi_sample", "lat": "latitude", "lon": "longitude", "coastal_fishing": "fisher_hamlet"
+  },
+  "metadata": {"source": "TatRaksha state adapter config", "reference_timestamp": "2026-09-30T00:00:00+05:30",
+               "dataset_version": "adapter-v1", "geographic_scope": "West Bengal", "is_sample": true}
+}

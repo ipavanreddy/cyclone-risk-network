@@ -1,0 +1,308 @@
+{
+  "title": "TatRaksha canonical disaster-risk data model v1 (PRD \u00a721, \u00a731)",
+  "definitions": {
+    "Village": {
+      "properties": {
+        "village_code": {
+          "title": "Village Code",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "block": {
+          "title": "Block",
+          "type": "string"
+        },
+        "district": {
+          "title": "District",
+          "type": "string"
+        },
+        "state": {
+          "title": "State",
+          "type": "string"
+        },
+        "population": {
+          "title": "Population",
+          "type": "integer"
+        },
+        "vulnerability_index": {
+          "title": "Vulnerability Index",
+          "type": "number"
+        },
+        "coastal_fishing": {
+          "default": false,
+          "title": "Coastal Fishing",
+          "type": "boolean"
+        },
+        "lat": {
+          "title": "Lat",
+          "type": "number"
+        },
+        "lon": {
+          "title": "Lon",
+          "type": "number"
+        }
+      },
+      "required": [
+        "village_code",
+        "name",
+        "block",
+        "district",
+        "state",
+        "population",
+        "vulnerability_index",
+        "lat",
+        "lon"
+      ],
+      "title": "Village",
+      "type": "object"
+    },
+    "Asset": {
+      "properties": {
+        "asset_id": {
+          "title": "Asset Id",
+          "type": "string"
+        },
+        "type": {
+          "title": "Type",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "capacity": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Capacity"
+        },
+        "criticality": {
+          "default": "medium",
+          "title": "Criticality",
+          "type": "string"
+        },
+        "near": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Near"
+        },
+        "lat": {
+          "title": "Lat",
+          "type": "number"
+        },
+        "lon": {
+          "title": "Lon",
+          "type": "number"
+        }
+      },
+      "required": [
+        "asset_id",
+        "type",
+        "name",
+        "lat",
+        "lon"
+      ],
+      "title": "Asset",
+      "type": "object"
+    },
+    "StateConfig": {
+      "$defs": {
+        "DatasetMeta": {
+          "properties": {
+            "source": {
+              "title": "Source",
+              "type": "string"
+            },
+            "reference_timestamp": {
+              "title": "Reference Timestamp",
+              "type": "string"
+            },
+            "dataset_version": {
+              "title": "Dataset Version",
+              "type": "string"
+            },
+            "geographic_scope": {
+              "title": "Geographic Scope",
+              "type": "string"
+            },
+            "is_sample": {
+              "default": true,
+              "title": "Is Sample",
+              "type": "boolean"
+            },
+            "is_synthetic": {
+              "default": false,
+              "title": "Is Synthetic",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "source",
+            "reference_timestamp",
+            "dataset_version",
+            "geographic_scope"
+          ],
+          "title": "DatasetMeta",
+          "type": "object"
+        }
+      },
+      "properties": {
+        "state": {
+          "title": "State",
+          "type": "string"
+        },
+        "state_name": {
+          "title": "State Name",
+          "type": "string"
+        },
+        "country": {
+          "title": "Country",
+          "type": "string"
+        },
+        "districts": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Districts",
+          "type": "array"
+        },
+        "default_district": {
+          "title": "Default District",
+          "type": "string"
+        },
+        "replays": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Replays",
+          "type": "array"
+        },
+        "languages": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Languages",
+          "type": "array"
+        },
+        "primary_language": {
+          "title": "Primary Language",
+          "type": "string"
+        },
+        "admin_units": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Admin Units",
+          "type": "object"
+        },
+        "issuing_authority": {
+          "title": "Issuing Authority",
+          "type": "string"
+        },
+        "cap_sender": {
+          "title": "Cap Sender",
+          "type": "string"
+        },
+        "alert_gateway": {
+          "title": "Alert Gateway",
+          "type": "string"
+        },
+        "forecast_source": {
+          "title": "Forecast Source",
+          "type": "string"
+        },
+        "risk_weights": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Risk Weights",
+          "type": "object"
+        },
+        "village_field_map": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "default": {},
+          "title": "Village Field Map",
+          "type": "object"
+        },
+        "metadata": {
+          "$ref": "#/$defs/DatasetMeta"
+        }
+      },
+      "required": [
+        "state",
+        "state_name",
+        "country",
+        "districts",
+        "default_district",
+        "replays",
+        "languages",
+        "primary_language",
+        "admin_units",
+        "issuing_authority",
+        "cap_sender",
+        "alert_gateway",
+        "forecast_source",
+        "risk_weights",
+        "metadata"
+      ],
+      "title": "StateConfig",
+      "type": "object"
+    },
+    "DatasetMeta": {
+      "properties": {
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "reference_timestamp": {
+          "title": "Reference Timestamp",
+          "type": "string"
+        },
+        "dataset_version": {
+          "title": "Dataset Version",
+          "type": "string"
+        },
+        "geographic_scope": {
+          "title": "Geographic Scope",
+          "type": "string"
+        },
+        "is_sample": {
+          "default": true,
+          "title": "Is Sample",
+          "type": "boolean"
+        },
+        "is_synthetic": {
+          "default": false,
+          "title": "Is Synthetic",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "source",
+        "reference_timestamp",
+        "dataset_version",
+        "geographic_scope"
+      ],
+      "title": "DatasetMeta",
+      "type": "object"
+    }
+  }
+}

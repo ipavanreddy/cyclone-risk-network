@@ -1,0 +1,402 @@
+{
+ "metadata": {
+  "source": "Sample shelters/substations/hospitals placed near real towns. Real mode: state shelter lists + OpenStreetMap.",
+  "reference_timestamp": "2026-09-30T00:00:00+05:30",
+  "dataset_version": "replay-sample-v1",
+  "geographic_scope": "Puri, Odisha (replay bbox)",
+  "is_sample": true,
+  "is_synthetic": false
+ },
+ "assets": [
+  {
+   "asset_id": "SH-OD-001",
+   "type": "shelter",
+   "name": "Multipurpose Cyclone Shelter, Penthakata (sample)",
+   "capacity": 1650,
+   "criticality": "high",
+   "near": "Penthakata",
+   "lat": 19.8131,
+   "lon": 85.8407
+  },
+  {
+   "asset_id": "SH-OD-002",
+   "type": "shelter",
+   "name": "Multipurpose Cyclone Shelter, Baliapanda (sample)",
+   "capacity": 1400,
+   "criticality": "high",
+   "near": "Baliapanda",
+   "lat": 19.8055,
+   "lon": 85.8023
+  },
+  {
+   "asset_id": "SH-OD-003",
+   "type": "shelter",
+   "name": "Multipurpose Cyclone Shelter, Sipasurubili (sample)",
+   "capacity": 1750,
+   "criticality": "high",
+   "near": "Sipasurubili",
+   "lat": 19.8344,
+   "lon": 85.8722
+  },
+  {
+   "asset_id": "SH-OD-004",
+   "type": "shelter",
+   "name": "Multipurpose Cyclone Shelter, Balighai (sample)",
+   "capacity": 1600,
+   "criticality": "high",
+   "near": "Balighai",
+   "lat": 19.8487,
+   "lon": 85.9137
+  },
+  {
+   "asset_id": "SH-OD-005",
+   "type": "shelter",
+   "name": "Multipurpose Cyclone Shelter, Beleswar (sample)",
+   "capacity": 1250,
+   "criticality": "high",
+   "near": "Beleswar",
+   "lat": 19.8581,
+   "lon": 85.9456
+  },
+  {
+   "asset_id": "SH-OD-006",
+   "type": "shelter",
+   "name": "Multipurpose Cyclone Shelter, Ramachandi (sample)",
+   "capacity": 1900,
+   "criticality": "high",
+   "near": "Ramachandi",
+   "lat": 19.8671,
+   "lon": 86.0019
+  },
+  {
+   "asset_id": "SH-OD-007",
+   "type": "shelter",
+   "name": "Multipurpose Cyclone Shelter, Konark (sample)",
+   "capacity": 1300,
+   "criticality": "high",
+   "near": "Konark",
+   "lat": 19.8961,
+   "lon": 86.093
+  },
+  {
+   "asset_id": "SH-OD-008",
+   "type": "shelter",
+   "name": "Multipurpose Cyclone Shelter, Chandrabhaga (sample)",
+   "capacity": 1200,
+   "criticality": "high",
+   "near": "Chandrabhaga",
+   "lat": 19.8907,
+   "lon": 86.1099
+  },
+  {
+   "asset_id": "SH-OD-009",
+   "type": "shelter",
+   "name": "Multipurpose Cyclone Shelter, Kuanrpur (sample)",
+   "capacity": 1950,
+   "criticality": "high",
+   "near": "Kuanrpur",
+   "lat": 19.9448,
+   "lon": 86.1528
+  },
+  {
+   "asset_id": "SH-OD-010",
+   "type": "shelter",
+   "name": "Multipurpose Cyclone Shelter, Astaranga (sample)",
+   "capacity": 1500,
+   "criticality": "high",
+   "near": "Astaranga",
+   "lat": 19.9948,
+   "lon": 86.2691
+  },
+  {
+   "asset_id": "SH-OD-011",
+   "type": "shelter",
+   "name": "Multipurpose Cyclone Shelter, Kakatpur (sample)",
+   "capacity": 1450,
+   "criticality": "high",
+   "near": "Kakatpur",
+   "lat": 20.007,
+   "lon": 86.1892
+  },
+  {
+   "asset_id": "SH-OD-012",
+   "type": "shelter",
+   "name": "Multipurpose Cyclone Shelter, Gop (sample)",
+   "capacity": 1350,
+   "criticality": "high",
+   "near": "Gop",
+   "lat": 20.0018,
+   "lon": 86.0334
+  },
+  {
+   "asset_id": "SH-OD-013",
+   "type": "shelter",
+   "name": "Multipurpose Cyclone Shelter, Chandanpur (sample)",
+   "capacity": 1600,
+   "criticality": "high",
+   "near": "Chandanpur",
+   "lat": 19.9379,
+   "lon": 85.8421
+  },
+  {
+   "asset_id": "SH-OD-014",
+   "type": "shelter",
+   "name": "Multipurpose Cyclone Shelter, Brahmagiri (sample)",
+   "capacity": 1750,
+   "criticality": "high",
+   "near": "Brahmagiri",
+   "lat": 19.8046,
+   "lon": 85.6775
+  },
+  {
+   "asset_id": "SH-OD-015",
+   "type": "shelter",
+   "name": "Multipurpose Cyclone Shelter, Baliharachandi (sample)",
+   "capacity": 1350,
+   "criticality": "high",
+   "near": "Baliharachandi",
+   "lat": 19.7513,
+   "lon": 85.6041
+  },
+  {
+   "asset_id": "SH-OD-016",
+   "type": "shelter",
+   "name": "Multipurpose Cyclone Shelter, Satapada (sample)",
+   "capacity": 1550,
+   "criticality": "high",
+   "near": "Satapada",
+   "lat": 19.7072,
+   "lon": 85.4436
+  },
+  {
+   "asset_id": "SH-OD-017",
+   "type": "shelter",
+   "name": "Multipurpose Cyclone Shelter, Nuanai (sample)",
+   "capacity": 1350,
+   "criticality": "high",
+   "near": "Nuanai",
+   "lat": 19.912,
+   "lon": 85.9029
+  },
+  {
+   "asset_id": "SH-OD-018",
+   "type": "shelter",
+   "name": "Multipurpose Cyclone Shelter, Sakhigopal (sample)",
+   "capacity": 1100,
+   "criticality": "high",
+   "near": "Sakhigopal",
+   "lat": 19.9793,
+   "lon": 85.8234
+  },
+  {
+   "asset_id": "SH-OD-019",
+   "type": "shelter",
+   "name": "Multipurpose Cyclone Shelter, Nimapara (sample)",
+   "capacity": 900,
+   "criticality": "high",
+   "near": "Nimapara",
+   "lat": 20.0647,
+   "lon": 85.9974
+  },
+  {
+   "asset_id": "SH-OD-020",
+   "type": "shelter",
+   "name": "Multipurpose Cyclone Shelter, Samang (sample)",
+   "capacity": 900,
+   "criticality": "high",
+   "near": "Samang",
+   "lat": 19.967,
+   "lon": 85.9503
+  },
+  {
+   "asset_id": "SS-OD-001",
+   "type": "substation",
+   "name": "Puri 132/33 kV substation (sample)",
+   "capacity": null,
+   "criticality": "high",
+   "near": "Puri coastal wards",
+   "lat": 19.803,
+   "lon": 85.83
+  },
+  {
+   "asset_id": "SS-OD-002",
+   "type": "substation",
+   "name": "Konark 33/11 kV substation (sample)",
+   "capacity": null,
+   "criticality": "medium",
+   "near": "Konark",
+   "lat": 19.884,
+   "lon": 86.098
+  },
+  {
+   "asset_id": "SS-OD-003",
+   "type": "substation",
+   "name": "Gop 33/11 kV substation (sample)",
+   "capacity": null,
+   "criticality": "medium",
+   "near": "Gop",
+   "lat": 19.993,
+   "lon": 86.039
+  },
+  {
+   "asset_id": "SS-OD-004",
+   "type": "substation",
+   "name": "Nimapara 132/33 kV substation (sample)",
+   "capacity": null,
+   "criticality": "high",
+   "near": "Nimapara",
+   "lat": 20.055,
+   "lon": 86.004
+  },
+  {
+   "asset_id": "SS-OD-005",
+   "type": "substation",
+   "name": "Pipili 220/132 kV substation (sample)",
+   "capacity": null,
+   "criticality": "high",
+   "near": "Pipili",
+   "lat": 20.11,
+   "lon": 85.835
+  },
+  {
+   "asset_id": "SS-OD-006",
+   "type": "substation",
+   "name": "Brahmagiri 33/11 kV substation (sample)",
+   "capacity": null,
+   "criticality": "medium",
+   "near": "Brahmagiri",
+   "lat": 19.792,
+   "lon": 85.684
+  },
+  {
+   "asset_id": "SS-OD-007",
+   "type": "substation",
+   "name": "Kakatpur 33/11 kV substation (sample)",
+   "capacity": null,
+   "criticality": "medium",
+   "near": "Kakatpur",
+   "lat": 19.997,
+   "lon": 86.194
+  },
+  {
+   "asset_id": "SS-OD-008",
+   "type": "substation",
+   "name": "Satapada 33/11 kV substation (sample)",
+   "capacity": null,
+   "criticality": "medium",
+   "near": "Satapada",
+   "lat": 19.697,
+   "lon": 85.446
+  },
+  {
+   "asset_id": "SS-OD-009",
+   "type": "substation",
+   "name": "Astaranga 33/11 kV substation (sample)",
+   "capacity": null,
+   "criticality": "medium",
+   "near": "Astaranga",
+   "lat": 19.987,
+   "lon": 86.274
+  },
+  {
+   "asset_id": "SS-OD-010",
+   "type": "substation",
+   "name": "Sakhigopal 33/11 kV substation (sample)",
+   "capacity": null,
+   "criticality": "medium",
+   "near": "Sakhigopal",
+   "lat": 19.969,
+   "lon": 85.826
+  },
+  {
+   "asset_id": "HS-OD-001",
+   "type": "hospital",
+   "name": "District Headquarters Hospital, Puri (sample location)",
+   "capacity": 182,
+   "criticality": "high",
+   "near": "Puri coastal wards",
+   "lat": 19.808,
+   "lon": 85.823
+  },
+  {
+   "asset_id": "HS-OD-002",
+   "type": "hospital",
+   "name": "CHC Gop (sample location)",
+   "capacity": 99,
+   "criticality": "high",
+   "near": "Gop",
+   "lat": 19.998,
+   "lon": 86.032
+  },
+  {
+   "asset_id": "HS-OD-003",
+   "type": "hospital",
+   "name": "CHC Nimapara (sample location)",
+   "capacity": 142,
+   "criticality": "high",
+   "near": "Nimapara",
+   "lat": 20.06,
+   "lon": 85.997
+  },
+  {
+   "asset_id": "HS-OD-004",
+   "type": "hospital",
+   "name": "CHC Brahmagiri (sample location)",
+   "capacity": 161,
+   "criticality": "high",
+   "near": "Brahmagiri",
+   "lat": 19.797,
+   "lon": 85.677
+  },
+  {
+   "asset_id": "HS-OD-005",
+   "type": "hospital",
+   "name": "CHC Kakatpur (sample location)",
+   "capacity": 195,
+   "criticality": "high",
+   "near": "Kakatpur",
+   "lat": 20.002,
+   "lon": 86.187
+  },
+  {
+   "asset_id": "HS-OD-006",
+   "type": "hospital",
+   "name": "CHC Astaranga (sample location)",
+   "capacity": 112,
+   "criticality": "high",
+   "near": "Astaranga",
+   "lat": 19.992,
+   "lon": 86.267
+  },
+  {
+   "asset_id": "HS-OD-007",
+   "type": "hospital",
+   "name": "CHC Sakhigopal (sample location)",
+   "capacity": 153,
+   "criticality": "high",
+   "near": "Sakhigopal",
+   "lat": 19.974,
+   "lon": 85.819
+  },
+  {
+   "asset_id": "HS-OD-008",
+   "type": "hospital",
+   "name": "CHC Pipili (sample location)",
+   "capacity": 169,
+   "criticality": "high",
+   "near": "Pipili",
+   "lat": 20.115,
+   "lon": 85.828
+  },
+  {
+   "asset_id": "HS-OD-009",
+   "type": "hospital",
+   "name": "PHC Satapada (sample location)",
+   "capacity": 60,
+   "criticality": "high",
+   "near": "Satapada",
+   "lat": 19.702,
+   "lon": 85.439
+  }
+ ]
+}

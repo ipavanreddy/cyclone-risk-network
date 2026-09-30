@@ -1,0 +1,1026 @@
+{
+ "metadata": {
+  "source": "Simplified sample road network between real place names (straight segments). Real mode: OpenStreetMap highways.",
+  "reference_timestamp": "2026-09-30T00:00:00+05:30",
+  "dataset_version": "replay-sample-v1",
+  "geographic_scope": "Puri, Odisha (replay bbox)",
+  "is_sample": true,
+  "is_synthetic": false
+ },
+ "nodes": [
+  {
+   "id": "SAMPLE-OD-FANI-001",
+   "kind": "village",
+   "lat": 19.806,
+   "lon": 85.826
+  },
+  {
+   "id": "SAMPLE-OD-FANI-002",
+   "kind": "village",
+   "lat": 19.808,
+   "lon": 85.843
+  },
+  {
+   "id": "SAMPLE-OD-FANI-003",
+   "kind": "village",
+   "lat": 19.797,
+   "lon": 85.805
+  },
+  {
+   "id": "SAMPLE-OD-FANI-004",
+   "kind": "village",
+   "lat": 19.812,
+   "lon": 85.858
+  },
+  {
+   "id": "SAMPLE-OD-FANI-005",
+   "kind": "village",
+   "lat": 19.826,
+   "lon": 85.872
+  },
+  {
+   "id": "SAMPLE-OD-FANI-006",
+   "kind": "village",
+   "lat": 19.834,
+   "lon": 85.89
+  },
+  {
+   "id": "SAMPLE-OD-FANI-007",
+   "kind": "village",
+   "lat": 19.844,
+   "lon": 85.912
+  },
+  {
+   "id": "SAMPLE-OD-FANI-008",
+   "kind": "village",
+   "lat": 19.852,
+   "lon": 85.943
+  },
+  {
+   "id": "SAMPLE-OD-FANI-009",
+   "kind": "village",
+   "lat": 19.862,
+   "lon": 86.002
+  },
+  {
+   "id": "SAMPLE-OD-FANI-010",
+   "kind": "village",
+   "lat": 19.884,
+   "lon": 86.11
+  },
+  {
+   "id": "SAMPLE-OD-FANI-011",
+   "kind": "village",
+   "lat": 19.887,
+   "lon": 86.094
+  },
+  {
+   "id": "SAMPLE-OD-FANI-012",
+   "kind": "village",
+   "lat": 19.996,
+   "lon": 86.035
+  },
+  {
+   "id": "SAMPLE-OD-FANI-013",
+   "kind": "village",
+   "lat": 19.935,
+   "lon": 86.15
+  },
+  {
+   "id": "SAMPLE-OD-FANI-014",
+   "kind": "village",
+   "lat": 20.0,
+   "lon": 86.19
+  },
+  {
+   "id": "SAMPLE-OD-FANI-015",
+   "kind": "village",
+   "lat": 19.99,
+   "lon": 86.27
+  },
+  {
+   "id": "SAMPLE-OD-FANI-016",
+   "kind": "village",
+   "lat": 19.955,
+   "lon": 86.235
+  },
+  {
+   "id": "SAMPLE-OD-FANI-017",
+   "kind": "village",
+   "lat": 19.93,
+   "lon": 85.842
+  },
+  {
+   "id": "SAMPLE-OD-FANI-018",
+   "kind": "village",
+   "lat": 19.972,
+   "lon": 85.822
+  },
+  {
+   "id": "SAMPLE-OD-FANI-019",
+   "kind": "village",
+   "lat": 20.058,
+   "lon": 86.0
+  },
+  {
+   "id": "SAMPLE-OD-FANI-020",
+   "kind": "village",
+   "lat": 20.113,
+   "lon": 85.831
+  },
+  {
+   "id": "SAMPLE-OD-FANI-021",
+   "kind": "village",
+   "lat": 20.06,
+   "lon": 85.72
+  },
+  {
+   "id": "SAMPLE-OD-FANI-022",
+   "kind": "village",
+   "lat": 20.02,
+   "lon": 85.6
+  },
+  {
+   "id": "SAMPLE-OD-FANI-023",
+   "kind": "village",
+   "lat": 19.795,
+   "lon": 85.68
+  },
+  {
+   "id": "SAMPLE-OD-FANI-024",
+   "kind": "village",
+   "lat": 19.742,
+   "lon": 85.605
+  },
+  {
+   "id": "SAMPLE-OD-FANI-025",
+   "kind": "village",
+   "lat": 19.7,
+   "lon": 85.442
+  },
+  {
+   "id": "SAMPLE-OD-FANI-026",
+   "kind": "village",
+   "lat": 19.712,
+   "lon": 85.47
+  },
+  {
+   "id": "SAMPLE-OD-FANI-027",
+   "kind": "village",
+   "lat": 19.76,
+   "lon": 85.52
+  },
+  {
+   "id": "SAMPLE-OD-FANI-028",
+   "kind": "village",
+   "lat": 19.848,
+   "lon": 85.965
+  },
+  {
+   "id": "SAMPLE-OD-FANI-029",
+   "kind": "village",
+   "lat": 19.905,
+   "lon": 85.905
+  },
+  {
+   "id": "SAMPLE-OD-FANI-030",
+   "kind": "village",
+   "lat": 19.96,
+   "lon": 85.95
+  },
+  {
+   "id": "HUB-PURI-PIPILI",
+   "kind": "hub",
+   "lat": 20.113,
+   "lon": 85.831
+  },
+  {
+   "id": "SH-OD-001",
+   "kind": "shelter",
+   "lat": 19.8131,
+   "lon": 85.8407
+  },
+  {
+   "id": "SH-OD-002",
+   "kind": "shelter",
+   "lat": 19.8055,
+   "lon": 85.8023
+  },
+  {
+   "id": "SH-OD-003",
+   "kind": "shelter",
+   "lat": 19.8344,
+   "lon": 85.8722
+  },
+  {
+   "id": "SH-OD-004",
+   "kind": "shelter",
+   "lat": 19.8487,
+   "lon": 85.9137
+  },
+  {
+   "id": "SH-OD-005",
+   "kind": "shelter",
+   "lat": 19.8581,
+   "lon": 85.9456
+  },
+  {
+   "id": "SH-OD-006",
+   "kind": "shelter",
+   "lat": 19.8671,
+   "lon": 86.0019
+  },
+  {
+   "id": "SH-OD-007",
+   "kind": "shelter",
+   "lat": 19.8961,
+   "lon": 86.093
+  },
+  {
+   "id": "SH-OD-008",
+   "kind": "shelter",
+   "lat": 19.8907,
+   "lon": 86.1099
+  },
+  {
+   "id": "SH-OD-009",
+   "kind": "shelter",
+   "lat": 19.9448,
+   "lon": 86.1528
+  },
+  {
+   "id": "SH-OD-010",
+   "kind": "shelter",
+   "lat": 19.9948,
+   "lon": 86.2691
+  },
+  {
+   "id": "SH-OD-011",
+   "kind": "shelter",
+   "lat": 20.007,
+   "lon": 86.1892
+  },
+  {
+   "id": "SH-OD-012",
+   "kind": "shelter",
+   "lat": 20.0018,
+   "lon": 86.0334
+  },
+  {
+   "id": "SH-OD-013",
+   "kind": "shelter",
+   "lat": 19.9379,
+   "lon": 85.8421
+  },
+  {
+   "id": "SH-OD-014",
+   "kind": "shelter",
+   "lat": 19.8046,
+   "lon": 85.6775
+  },
+  {
+   "id": "SH-OD-015",
+   "kind": "shelter",
+   "lat": 19.7513,
+   "lon": 85.6041
+  },
+  {
+   "id": "SH-OD-016",
+   "kind": "shelter",
+   "lat": 19.7072,
+   "lon": 85.4436
+  },
+  {
+   "id": "SH-OD-017",
+   "kind": "shelter",
+   "lat": 19.912,
+   "lon": 85.9029
+  },
+  {
+   "id": "SH-OD-018",
+   "kind": "shelter",
+   "lat": 19.9793,
+   "lon": 85.8234
+  },
+  {
+   "id": "SH-OD-019",
+   "kind": "shelter",
+   "lat": 20.0647,
+   "lon": 85.9974
+  },
+  {
+   "id": "SH-OD-020",
+   "kind": "shelter",
+   "lat": 19.967,
+   "lon": 85.9503
+  },
+  {
+   "id": "SS-OD-001",
+   "kind": "substation",
+   "lat": 19.803,
+   "lon": 85.83
+  },
+  {
+   "id": "SS-OD-002",
+   "kind": "substation",
+   "lat": 19.884,
+   "lon": 86.098
+  },
+  {
+   "id": "SS-OD-003",
+   "kind": "substation",
+   "lat": 19.993,
+   "lon": 86.039
+  },
+  {
+   "id": "SS-OD-004",
+   "kind": "substation",
+   "lat": 20.055,
+   "lon": 86.004
+  },
+  {
+   "id": "SS-OD-005",
+   "kind": "substation",
+   "lat": 20.11,
+   "lon": 85.835
+  },
+  {
+   "id": "SS-OD-006",
+   "kind": "substation",
+   "lat": 19.792,
+   "lon": 85.684
+  },
+  {
+   "id": "SS-OD-007",
+   "kind": "substation",
+   "lat": 19.997,
+   "lon": 86.194
+  },
+  {
+   "id": "SS-OD-008",
+   "kind": "substation",
+   "lat": 19.697,
+   "lon": 85.446
+  },
+  {
+   "id": "SS-OD-009",
+   "kind": "substation",
+   "lat": 19.987,
+   "lon": 86.274
+  },
+  {
+   "id": "SS-OD-010",
+   "kind": "substation",
+   "lat": 19.969,
+   "lon": 85.826
+  },
+  {
+   "id": "HS-OD-001",
+   "kind": "hospital",
+   "lat": 19.808,
+   "lon": 85.823
+  },
+  {
+   "id": "HS-OD-002",
+   "kind": "hospital",
+   "lat": 19.998,
+   "lon": 86.032
+  },
+  {
+   "id": "HS-OD-003",
+   "kind": "hospital",
+   "lat": 20.06,
+   "lon": 85.997
+  },
+  {
+   "id": "HS-OD-004",
+   "kind": "hospital",
+   "lat": 19.797,
+   "lon": 85.677
+  },
+  {
+   "id": "HS-OD-005",
+   "kind": "hospital",
+   "lat": 20.002,
+   "lon": 86.187
+  },
+  {
+   "id": "HS-OD-006",
+   "kind": "hospital",
+   "lat": 19.992,
+   "lon": 86.267
+  },
+  {
+   "id": "HS-OD-007",
+   "kind": "hospital",
+   "lat": 19.974,
+   "lon": 85.819
+  },
+  {
+   "id": "HS-OD-008",
+   "kind": "hospital",
+   "lat": 20.115,
+   "lon": 85.828
+  },
+  {
+   "id": "HS-OD-009",
+   "kind": "hospital",
+   "lat": 19.702,
+   "lon": 85.439
+  }
+ ],
+ "edges": [
+  {
+   "edge_id": "E0001",
+   "from": "SAMPLE-OD-FANI-020",
+   "to": "SAMPLE-OD-FANI-018",
+   "road": "NH-316",
+   "kind": "arterial",
+   "length_km": 18.85
+  },
+  {
+   "edge_id": "E0002",
+   "from": "SAMPLE-OD-FANI-018",
+   "to": "SAMPLE-OD-FANI-017",
+   "road": "NH-316",
+   "kind": "arterial",
+   "length_km": 6.14
+  },
+  {
+   "edge_id": "E0003",
+   "from": "SAMPLE-OD-FANI-017",
+   "to": "SAMPLE-OD-FANI-001",
+   "road": "NH-316",
+   "kind": "arterial",
+   "length_km": 16.67
+  },
+  {
+   "edge_id": "E0004",
+   "from": "SAMPLE-OD-FANI-001",
+   "to": "SAMPLE-OD-FANI-004",
+   "road": "Marine Drive (Puri–Konark)",
+   "kind": "arterial",
+   "length_km": 4.1
+  },
+  {
+   "edge_id": "E0005",
+   "from": "SAMPLE-OD-FANI-004",
+   "to": "SAMPLE-OD-FANI-005",
+   "road": "Marine Drive (Puri–Konark)",
+   "kind": "arterial",
+   "length_km": 2.56
+  },
+  {
+   "edge_id": "E0006",
+   "from": "SAMPLE-OD-FANI-005",
+   "to": "SAMPLE-OD-FANI-006",
+   "road": "Marine Drive (Puri–Konark)",
+   "kind": "arterial",
+   "length_km": 2.5
+  },
+  {
+   "edge_id": "E0007",
+   "from": "SAMPLE-OD-FANI-006",
+   "to": "SAMPLE-OD-FANI-007",
+   "road": "Marine Drive (Puri–Konark)",
+   "kind": "arterial",
+   "length_km": 3.07
+  },
+  {
+   "edge_id": "E0008",
+   "from": "SAMPLE-OD-FANI-007",
+   "to": "SAMPLE-OD-FANI-008",
+   "road": "Marine Drive (Puri–Konark)",
+   "kind": "arterial",
+   "length_km": 4.03
+  },
+  {
+   "edge_id": "E0009",
+   "from": "SAMPLE-OD-FANI-008",
+   "to": "SAMPLE-OD-FANI-028",
+   "road": "Marine Drive (Puri–Konark)",
+   "kind": "arterial",
+   "length_km": 2.81
+  },
+  {
+   "edge_id": "E0010",
+   "from": "SAMPLE-OD-FANI-028",
+   "to": "SAMPLE-OD-FANI-009",
+   "road": "Marine Drive (Puri–Konark)",
+   "kind": "arterial",
+   "length_km": 5.01
+  },
+  {
+   "edge_id": "E0011",
+   "from": "SAMPLE-OD-FANI-009",
+   "to": "SAMPLE-OD-FANI-011",
+   "road": "Marine Drive (Puri–Konark)",
+   "kind": "arterial",
+   "length_km": 12.02
+  },
+  {
+   "edge_id": "E0012",
+   "from": "SAMPLE-OD-FANI-011",
+   "to": "SAMPLE-OD-FANI-010",
+   "road": "Marine Drive (Puri–Konark)",
+   "kind": "arterial",
+   "length_km": 2.05
+  },
+  {
+   "edge_id": "E0013",
+   "from": "SAMPLE-OD-FANI-011",
+   "to": "SAMPLE-OD-FANI-013",
+   "road": "Konark–Astaranga road",
+   "kind": "arterial",
+   "length_km": 9.51
+  },
+  {
+   "edge_id": "E0014",
+   "from": "SAMPLE-OD-FANI-013",
+   "to": "SAMPLE-OD-FANI-016",
+   "road": "Konark–Astaranga road",
+   "kind": "arterial",
+   "length_km": 10.99
+  },
+  {
+   "edge_id": "E0015",
+   "from": "SAMPLE-OD-FANI-016",
+   "to": "SAMPLE-OD-FANI-015",
+   "road": "Konark–Astaranga road",
+   "kind": "arterial",
+   "length_km": 6.41
+  },
+  {
+   "edge_id": "E0016",
+   "from": "SAMPLE-OD-FANI-011",
+   "to": "SAMPLE-OD-FANI-030",
+   "road": "Konark–Pipili road",
+   "kind": "arterial",
+   "length_km": 20.52
+  },
+  {
+   "edge_id": "E0017",
+   "from": "SAMPLE-OD-FANI-030",
+   "to": "SAMPLE-OD-FANI-012",
+   "road": "Konark–Pipili road",
+   "kind": "arterial",
+   "length_km": 11.69
+  },
+  {
+   "edge_id": "E0018",
+   "from": "SAMPLE-OD-FANI-012",
+   "to": "SAMPLE-OD-FANI-019",
+   "road": "Konark–Pipili road",
+   "kind": "arterial",
+   "length_km": 9.36
+  },
+  {
+   "edge_id": "E0019",
+   "from": "SAMPLE-OD-FANI-019",
+   "to": "SAMPLE-OD-FANI-020",
+   "road": "Konark–Pipili road",
+   "kind": "arterial",
+   "length_km": 22.42
+  },
+  {
+   "edge_id": "E0020",
+   "from": "SAMPLE-OD-FANI-019",
+   "to": "SAMPLE-OD-FANI-014",
+   "road": "Nimapara–Kakatpur road",
+   "kind": "arterial",
+   "length_km": 25.05
+  },
+  {
+   "edge_id": "E0021",
+   "from": "SAMPLE-OD-FANI-014",
+   "to": "SAMPLE-OD-FANI-015",
+   "road": "Nimapara–Kakatpur road",
+   "kind": "arterial",
+   "length_km": 10.12
+  },
+  {
+   "edge_id": "E0022",
+   "from": "SAMPLE-OD-FANI-001",
+   "to": "SAMPLE-OD-FANI-003",
+   "road": "Puri–Satapada road",
+   "kind": "arterial",
+   "length_km": 2.9
+  },
+  {
+   "edge_id": "E0023",
+   "from": "SAMPLE-OD-FANI-003",
+   "to": "SAMPLE-OD-FANI-023",
+   "road": "Puri–Satapada road",
+   "kind": "arterial",
+   "length_km": 15.7
+  },
+  {
+   "edge_id": "E0024",
+   "from": "SAMPLE-OD-FANI-023",
+   "to": "SAMPLE-OD-FANI-027",
+   "road": "Puri–Satapada road",
+   "kind": "arterial",
+   "length_km": 20.63
+  },
+  {
+   "edge_id": "E0025",
+   "from": "SAMPLE-OD-FANI-027",
+   "to": "SAMPLE-OD-FANI-024",
+   "road": "Puri–Satapada road",
+   "kind": "arterial",
+   "length_km": 10.94
+  },
+  {
+   "edge_id": "E0026",
+   "from": "SAMPLE-OD-FANI-024",
+   "to": "SAMPLE-OD-FANI-025",
+   "road": "Puri–Satapada road",
+   "kind": "arterial",
+   "length_km": 21.23
+  },
+  {
+   "edge_id": "E0027",
+   "from": "SAMPLE-OD-FANI-025",
+   "to": "SAMPLE-OD-FANI-026",
+   "road": "Puri–Satapada road",
+   "kind": "arterial",
+   "length_km": 3.86
+  },
+  {
+   "edge_id": "E0028",
+   "from": "SAMPLE-OD-FANI-023",
+   "to": "SAMPLE-OD-FANI-022",
+   "road": "Brahmagiri–Delang road",
+   "kind": "arterial",
+   "length_km": 31.66
+  },
+  {
+   "edge_id": "E0029",
+   "from": "SAMPLE-OD-FANI-022",
+   "to": "SAMPLE-OD-FANI-021",
+   "road": "Brahmagiri–Delang road",
+   "kind": "arterial",
+   "length_km": 15.96
+  },
+  {
+   "edge_id": "E0030",
+   "from": "SAMPLE-OD-FANI-021",
+   "to": "SAMPLE-OD-FANI-020",
+   "road": "Brahmagiri–Delang road",
+   "kind": "arterial",
+   "length_km": 15.61
+  },
+  {
+   "edge_id": "E0031",
+   "from": "SAMPLE-OD-FANI-017",
+   "to": "SAMPLE-OD-FANI-029",
+   "road": "Chandanpur–Gop road",
+   "kind": "arterial",
+   "length_km": 8.58
+  },
+  {
+   "edge_id": "E0032",
+   "from": "SAMPLE-OD-FANI-029",
+   "to": "SAMPLE-OD-FANI-030",
+   "road": "Chandanpur–Gop road",
+   "kind": "arterial",
+   "length_km": 9.26
+  },
+  {
+   "edge_id": "E0033",
+   "from": "SAMPLE-OD-FANI-001",
+   "to": "SAMPLE-OD-FANI-002",
+   "road": "Penthakata lane",
+   "kind": "arterial",
+   "length_km": 2.15
+  },
+  {
+   "edge_id": "E0034",
+   "from": "SAMPLE-OD-FANI-002",
+   "to": "SAMPLE-OD-FANI-004",
+   "road": "Penthakata lane",
+   "kind": "arterial",
+   "length_km": 1.96
+  },
+  {
+   "edge_id": "E0035",
+   "from": "HUB-PURI-PIPILI",
+   "to": "SAMPLE-OD-FANI-020",
+   "road": "Depot access road",
+   "kind": "local",
+   "length_km": 0.0
+  },
+  {
+   "edge_id": "E0036",
+   "from": "SAMPLE-OD-FANI-002",
+   "to": "SH-OD-001",
+   "road": "Access road to SH-OD-001",
+   "kind": "local",
+   "length_km": 0.74
+  },
+  {
+   "edge_id": "E0037",
+   "from": "SAMPLE-OD-FANI-003",
+   "to": "SH-OD-002",
+   "road": "Access road to SH-OD-002",
+   "kind": "local",
+   "length_km": 1.18
+  },
+  {
+   "edge_id": "E0038",
+   "from": "SAMPLE-OD-FANI-005",
+   "to": "SH-OD-003",
+   "road": "Access road to SH-OD-003",
+   "kind": "local",
+   "length_km": 1.12
+  },
+  {
+   "edge_id": "E0039",
+   "from": "SAMPLE-OD-FANI-007",
+   "to": "SH-OD-004",
+   "road": "Access road to SH-OD-004",
+   "kind": "local",
+   "length_km": 0.66
+  },
+  {
+   "edge_id": "E0040",
+   "from": "SAMPLE-OD-FANI-008",
+   "to": "SH-OD-005",
+   "road": "Access road to SH-OD-005",
+   "kind": "local",
+   "length_km": 0.88
+  },
+  {
+   "edge_id": "E0041",
+   "from": "SAMPLE-OD-FANI-009",
+   "to": "SH-OD-006",
+   "road": "Access road to SH-OD-006",
+   "kind": "local",
+   "length_km": 0.68
+  },
+  {
+   "edge_id": "E0042",
+   "from": "SAMPLE-OD-FANI-011",
+   "to": "SH-OD-007",
+   "road": "Access road to SH-OD-007",
+   "kind": "local",
+   "length_km": 1.22
+  },
+  {
+   "edge_id": "E0043",
+   "from": "SAMPLE-OD-FANI-010",
+   "to": "SH-OD-008",
+   "road": "Access road to SH-OD-008",
+   "kind": "local",
+   "length_km": 0.89
+  },
+  {
+   "edge_id": "E0044",
+   "from": "SAMPLE-OD-FANI-013",
+   "to": "SH-OD-009",
+   "road": "Access road to SH-OD-009",
+   "kind": "local",
+   "length_km": 1.35
+  },
+  {
+   "edge_id": "E0045",
+   "from": "SAMPLE-OD-FANI-015",
+   "to": "SH-OD-010",
+   "road": "Access road to SH-OD-010",
+   "kind": "local",
+   "length_km": 0.65
+  },
+  {
+   "edge_id": "E0046",
+   "from": "SAMPLE-OD-FANI-014",
+   "to": "SH-OD-011",
+   "road": "Access road to SH-OD-011",
+   "kind": "local",
+   "length_km": 0.94
+  },
+  {
+   "edge_id": "E0047",
+   "from": "SAMPLE-OD-FANI-012",
+   "to": "SH-OD-012",
+   "road": "Access road to SH-OD-012",
+   "kind": "local",
+   "length_km": 0.8
+  },
+  {
+   "edge_id": "E0048",
+   "from": "SAMPLE-OD-FANI-017",
+   "to": "SH-OD-013",
+   "road": "Access road to SH-OD-013",
+   "kind": "local",
+   "length_km": 1.05
+  },
+  {
+   "edge_id": "E0049",
+   "from": "SAMPLE-OD-FANI-023",
+   "to": "SH-OD-014",
+   "road": "Access road to SH-OD-014",
+   "kind": "local",
+   "length_km": 1.32
+  },
+  {
+   "edge_id": "E0050",
+   "from": "SAMPLE-OD-FANI-024",
+   "to": "SH-OD-015",
+   "road": "Access road to SH-OD-015",
+   "kind": "local",
+   "length_km": 1.25
+  },
+  {
+   "edge_id": "E0051",
+   "from": "SAMPLE-OD-FANI-025",
+   "to": "SH-OD-016",
+   "road": "Access road to SH-OD-016",
+   "kind": "local",
+   "length_km": 0.98
+  },
+  {
+   "edge_id": "E0052",
+   "from": "SAMPLE-OD-FANI-029",
+   "to": "SH-OD-017",
+   "road": "Access road to SH-OD-017",
+   "kind": "local",
+   "length_km": 0.97
+  },
+  {
+   "edge_id": "E0053",
+   "from": "SAMPLE-OD-FANI-018",
+   "to": "SH-OD-018",
+   "road": "Access road to SH-OD-018",
+   "kind": "local",
+   "length_km": 0.99
+  },
+  {
+   "edge_id": "E0054",
+   "from": "SAMPLE-OD-FANI-019",
+   "to": "SH-OD-019",
+   "road": "Access road to SH-OD-019",
+   "kind": "local",
+   "length_km": 0.95
+  },
+  {
+   "edge_id": "E0055",
+   "from": "SAMPLE-OD-FANI-030",
+   "to": "SH-OD-020",
+   "road": "Access road to SH-OD-020",
+   "kind": "local",
+   "length_km": 0.93
+  },
+  {
+   "edge_id": "E0056",
+   "from": "SAMPLE-OD-FANI-001",
+   "to": "SS-OD-001",
+   "road": "Access road to SS-OD-001",
+   "kind": "local",
+   "length_km": 0.64
+  },
+  {
+   "edge_id": "E0057",
+   "from": "SAMPLE-OD-FANI-011",
+   "to": "SS-OD-002",
+   "road": "Access road to SS-OD-002",
+   "kind": "local",
+   "length_km": 0.64
+  },
+  {
+   "edge_id": "E0058",
+   "from": "SAMPLE-OD-FANI-012",
+   "to": "SS-OD-003",
+   "road": "Access road to SS-OD-003",
+   "kind": "local",
+   "length_km": 0.64
+  },
+  {
+   "edge_id": "E0059",
+   "from": "SAMPLE-OD-FANI-019",
+   "to": "SS-OD-004",
+   "road": "Access road to SS-OD-004",
+   "kind": "local",
+   "length_km": 0.64
+  },
+  {
+   "edge_id": "E0060",
+   "from": "SAMPLE-OD-FANI-020",
+   "to": "SS-OD-005",
+   "road": "Access road to SS-OD-005",
+   "kind": "local",
+   "length_km": 0.64
+  },
+  {
+   "edge_id": "E0061",
+   "from": "SAMPLE-OD-FANI-023",
+   "to": "SS-OD-006",
+   "road": "Access road to SS-OD-006",
+   "kind": "local",
+   "length_km": 0.64
+  },
+  {
+   "edge_id": "E0062",
+   "from": "SAMPLE-OD-FANI-014",
+   "to": "SS-OD-007",
+   "road": "Access road to SS-OD-007",
+   "kind": "local",
+   "length_km": 0.64
+  },
+  {
+   "edge_id": "E0063",
+   "from": "SAMPLE-OD-FANI-025",
+   "to": "SS-OD-008",
+   "road": "Access road to SS-OD-008",
+   "kind": "local",
+   "length_km": 0.64
+  },
+  {
+   "edge_id": "E0064",
+   "from": "SAMPLE-OD-FANI-015",
+   "to": "SS-OD-009",
+   "road": "Access road to SS-OD-009",
+   "kind": "local",
+   "length_km": 0.64
+  },
+  {
+   "edge_id": "E0065",
+   "from": "SAMPLE-OD-FANI-018",
+   "to": "SS-OD-010",
+   "road": "Access road to SS-OD-010",
+   "kind": "local",
+   "length_km": 0.64
+  },
+  {
+   "edge_id": "E0066",
+   "from": "SAMPLE-OD-FANI-001",
+   "to": "HS-OD-001",
+   "road": "Access road to HS-OD-001",
+   "kind": "local",
+   "length_km": 0.46
+  },
+  {
+   "edge_id": "E0067",
+   "from": "SAMPLE-OD-FANI-012",
+   "to": "HS-OD-002",
+   "road": "Access road to HS-OD-002",
+   "kind": "local",
+   "length_km": 0.46
+  },
+  {
+   "edge_id": "E0068",
+   "from": "SAMPLE-OD-FANI-019",
+   "to": "HS-OD-003",
+   "road": "Access road to HS-OD-003",
+   "kind": "local",
+   "length_km": 0.46
+  },
+  {
+   "edge_id": "E0069",
+   "from": "SAMPLE-OD-FANI-023",
+   "to": "HS-OD-004",
+   "road": "Access road to HS-OD-004",
+   "kind": "local",
+   "length_km": 0.46
+  },
+  {
+   "edge_id": "E0070",
+   "from": "SAMPLE-OD-FANI-014",
+   "to": "HS-OD-005",
+   "road": "Access road to HS-OD-005",
+   "kind": "local",
+   "length_km": 0.46
+  },
+  {
+   "edge_id": "E0071",
+   "from": "SAMPLE-OD-FANI-015",
+   "to": "HS-OD-006",
+   "road": "Access road to HS-OD-006",
+   "kind": "local",
+   "length_km": 0.46
+  },
+  {
+   "edge_id": "E0072",
+   "from": "SAMPLE-OD-FANI-018",
+   "to": "HS-OD-007",
+   "road": "Access road to HS-OD-007",
+   "kind": "local",
+   "length_km": 0.46
+  },
+  {
+   "edge_id": "E0073",
+   "from": "SAMPLE-OD-FANI-020",
+   "to": "HS-OD-008",
+   "road": "Access road to HS-OD-008",
+   "kind": "local",
+   "length_km": 0.46
+  },
+  {
+   "edge_id": "E0074",
+   "from": "SAMPLE-OD-FANI-025",
+   "to": "HS-OD-009",
+   "road": "Access road to HS-OD-009",
+   "kind": "local",
+   "length_km": 0.46
+  }
+ ]
+}

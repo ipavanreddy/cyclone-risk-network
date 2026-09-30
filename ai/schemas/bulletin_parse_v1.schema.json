@@ -1,0 +1,142 @@
+{
+  "$defs": {
+    "ExpectedLandfall": {
+      "properties": {
+        "area": {
+          "title": "Area",
+          "type": "string"
+        },
+        "time": {
+          "description": "ISO 8601 if a clock time can be derived, else the bulletin wording",
+          "title": "Time",
+          "type": "string"
+        }
+      },
+      "required": [
+        "area",
+        "time"
+      ],
+      "title": "ExpectedLandfall",
+      "type": "object"
+    },
+    "TrackPoint": {
+      "properties": {
+        "time": {
+          "description": "ISO 8601 with +05:30 offset, exactly as given in the bulletin table",
+          "title": "Time",
+          "type": "string"
+        },
+        "lat": {
+          "title": "Lat",
+          "type": "number"
+        },
+        "lon": {
+          "title": "Lon",
+          "type": "number"
+        },
+        "max_wind_kmh": {
+          "description": "Upper value of the maximum sustained wind range",
+          "title": "Max Wind Kmh",
+          "type": "integer"
+        },
+        "central_pressure_hpa": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Central Pressure Hpa"
+        },
+        "category": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Category"
+        }
+      },
+      "required": [
+        "time",
+        "lat",
+        "lon",
+        "max_wind_kmh"
+      ],
+      "title": "TrackPoint",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "cyclone_name": {
+      "title": "Cyclone Name",
+      "type": "string"
+    },
+    "bulletin_no": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Bulletin No"
+    },
+    "issued_at": {
+      "title": "Issued At",
+      "type": "string"
+    },
+    "track": {
+      "items": {
+        "$ref": "#/$defs/TrackPoint"
+      },
+      "title": "Track",
+      "type": "array"
+    },
+    "expected_landfall": {
+      "$ref": "#/$defs/ExpectedLandfall"
+    },
+    "official_surge_text": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Storm surge guidance sentence, verbatim",
+      "title": "Official Surge Text"
+    },
+    "confidence": {
+      "maximum": 1,
+      "minimum": 0,
+      "title": "Confidence",
+      "type": "number"
+    },
+    "requires_human_review": {
+      "default": true,
+      "title": "Requires Human Review",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "cyclone_name",
+    "issued_at",
+    "track",
+    "expected_landfall",
+    "confidence"
+  ],
+  "title": "BulletinParse",
+  "type": "object"
+}

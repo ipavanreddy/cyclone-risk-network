@@ -1,0 +1,456 @@
+{
+ "metadata": {
+  "source": "Approximate reconstruction from publicly reported IMD/RSMC New Delhi facts (landfall place/time, intensity, surge guidance). Sample, not the official best track.",
+  "reference_timestamp": "2026-09-30T00:00:00+05:30",
+  "dataset_version": "replay-sample-v1",
+  "geographic_scope": "South 24 Parganas, West Bengal (replay bbox)",
+  "is_sample": true,
+  "is_synthetic": false
+ },
+ "replay_id": "amphan-2020",
+ "code": "AMPHAN-2020",
+ "cyclone_name": "Amphan",
+ "state": "WB",
+ "district": "South 24 Parganas",
+ "landfall_time": "2020-05-20T17:30:00+05:30",
+ "landfall_area": "across the Sundarbans, between Digha (West Bengal) and Hatiya (Bangladesh)",
+ "model_params": {
+  "rmw_km": 30,
+  "shelf_factor": 3.4,
+  "tide_m": {
+   "expected": 1.0,
+   "high": 1.4
+  },
+  "surge_inland_decay_m_per_km": 0.08,
+  "rain_r0_mm_h": 14.0,
+  "antecedent_wetness": 0.3,
+  "_note": "Tide levels, shelf factor and rainfall scale are sample calibration values (documented in geospatial/earth-engine/README.md)."
+ },
+ "hub": {
+  "id": "HUB-S24P-BARUIPUR",
+  "name": "District relief depot, Baruipur (sample)",
+  "lat": 22.36,
+  "lon": 88.43
+ },
+ "truth_track": [
+  {
+   "hours_from_landfall": -84,
+   "lat": 12.2,
+   "lon": 86.4,
+   "max_wind_kmh": 120,
+   "central_pressure_hpa": 976
+  },
+  {
+   "hours_from_landfall": -72,
+   "lat": 12.9,
+   "lon": 86.3,
+   "max_wind_kmh": 150,
+   "central_pressure_hpa": 968
+  },
+  {
+   "hours_from_landfall": -60,
+   "lat": 13.8,
+   "lon": 86.3,
+   "max_wind_kmh": 240,
+   "central_pressure_hpa": 925
+  },
+  {
+   "hours_from_landfall": -48,
+   "lat": 15.2,
+   "lon": 86.5,
+   "max_wind_kmh": 230,
+   "central_pressure_hpa": 930
+  },
+  {
+   "hours_from_landfall": -36,
+   "lat": 16.6,
+   "lon": 86.8,
+   "max_wind_kmh": 220,
+   "central_pressure_hpa": 940
+  },
+  {
+   "hours_from_landfall": -24,
+   "lat": 18.2,
+   "lon": 87.2,
+   "max_wind_kmh": 200,
+   "central_pressure_hpa": 950
+  },
+  {
+   "hours_from_landfall": -12,
+   "lat": 20.0,
+   "lon": 87.7,
+   "max_wind_kmh": 180,
+   "central_pressure_hpa": 960
+  },
+  {
+   "hours_from_landfall": -6,
+   "lat": 20.9,
+   "lon": 88.0,
+   "max_wind_kmh": 170,
+   "central_pressure_hpa": 965
+  },
+  {
+   "hours_from_landfall": 0,
+   "lat": 21.62,
+   "lon": 88.3,
+   "max_wind_kmh": 160,
+   "central_pressure_hpa": 968
+  },
+  {
+   "hours_from_landfall": 6,
+   "lat": 22.6,
+   "lon": 88.5,
+   "max_wind_kmh": 120,
+   "central_pressure_hpa": 980
+  },
+  {
+   "hours_from_landfall": 12,
+   "lat": 23.6,
+   "lon": 89.0,
+   "max_wind_kmh": 80,
+   "central_pressure_hpa": 990
+  },
+  {
+   "hours_from_landfall": 24,
+   "lat": 25.0,
+   "lon": 89.6,
+   "max_wind_kmh": 50,
+   "central_pressure_hpa": 996
+  }
+ ],
+ "steps": [
+  {
+   "step": "T72",
+   "hours_before_landfall": 72,
+   "bulletin_no": "AMPHAN-2020/14",
+   "issued_at": "2020-05-17T17:30:00+05:30",
+   "bulletin_text": "INDIA METEOROLOGICAL DEPARTMENT – REPLAY SAMPLE\n*** Reconstructed for training/replay from publicly reported facts. NOT an official IMD product. ***\nTROPICAL CYCLONE ADVISORY BULLETIN\nBulletin No.: AMPHAN-2020/14\nIssued at: 1730 IST, 17 May 2020\nSub: Very Severe Cyclonic Storm 'AMPHAN' over central Bay of Bengal – West Bengal – Bangladesh coasts\n\nThe Very Severe Cyclonic Storm 'AMPHAN' lay centred at 1730 hours IST of 17 May 2020 near latitude 12.9°N and longitude 86.3°E. Estimated central pressure 968 hPa. It is very likely to move northwards, intensify up to 240 km/h and cross the West Bengal – Bangladesh coasts across the Sundarbans, between Digha (West Bengal) and Hatiya (Bangladesh) during the afternoon of 20 May 2020 with maximum sustained wind speed of 155-165 km/h gusting to 185 km/h.\n\nForecast track and intensity:\nDate/Time (IST) | Position (Lat °N / Long °E) | Max sustained surface wind (km/h) | Central pressure (hPa) | Category\n17.05.20/1730 | 12.9/86.3 | 140-150 gusting to 170 | 968 | VSCS\n17.05.20/2330 | 13.3/86.3 | 185-195 gusting to 215 | 946 | ESCS\n18.05.20/0530 | 13.8/86.3 | 230-240 gusting to 260 | 925 | SuCS\n18.05.20/1130 | 14.5/86.5 | 225-235 gusting to 255 | 928 | SuCS\n18.05.20/1730 | 15.2/86.6 | 225-235 gusting to 255 | 930 | SuCS\n19.05.20/0530 | 16.6/86.9 | 215-225 gusting to 245 | 940 | SuCS\n19.05.20/1730 | 18.2/87.4 | 195-205 gusting to 225 | 950 | ESCS\n20.05.20/0530 | 19.9/87.9 | 175-185 gusting to 205 | 960 | ESCS\n20.05.20/1730 | 21.5/88.6 | 155-165 gusting to 185 | 968 | VSCS\n21.05.20/0530 | 23.5/89.3 | 75-85 gusting to 105 | 990 | CS\n\nStorm surge: Storm surge of about 4-5 m above astronomical tide is likely to inundate low lying areas of South and North 24 Parganas districts at the time of landfall.\nSea condition: Phenomenal to very high. Fishermen are advised not to venture into the sea.\nNext bulletin: in 3 hours.",
+   "truth_parse": {
+    "cyclone_name": "Amphan",
+    "issued_at": "2020-05-17T17:30:00+05:30",
+    "track": [
+     {
+      "time": "2020-05-17T17:30:00+05:30",
+      "lead_h": 0,
+      "lat": 12.9,
+      "lon": 86.3,
+      "max_wind_kmh": 150,
+      "central_pressure_hpa": 968,
+      "category": "VSCS"
+     },
+     {
+      "time": "2020-05-17T23:30:00+05:30",
+      "lead_h": 6,
+      "lat": 13.3,
+      "lon": 86.3,
+      "max_wind_kmh": 195,
+      "central_pressure_hpa": 946,
+      "category": "ESCS"
+     },
+     {
+      "time": "2020-05-18T05:30:00+05:30",
+      "lead_h": 12,
+      "lat": 13.8,
+      "lon": 86.3,
+      "max_wind_kmh": 240,
+      "central_pressure_hpa": 925,
+      "category": "SuCS"
+     },
+     {
+      "time": "2020-05-18T11:30:00+05:30",
+      "lead_h": 18,
+      "lat": 14.5,
+      "lon": 86.5,
+      "max_wind_kmh": 235,
+      "central_pressure_hpa": 928,
+      "category": "SuCS"
+     },
+     {
+      "time": "2020-05-18T17:30:00+05:30",
+      "lead_h": 24,
+      "lat": 15.2,
+      "lon": 86.6,
+      "max_wind_kmh": 235,
+      "central_pressure_hpa": 930,
+      "category": "SuCS"
+     },
+     {
+      "time": "2020-05-19T05:30:00+05:30",
+      "lead_h": 36,
+      "lat": 16.6,
+      "lon": 86.9,
+      "max_wind_kmh": 225,
+      "central_pressure_hpa": 940,
+      "category": "SuCS"
+     },
+     {
+      "time": "2020-05-19T17:30:00+05:30",
+      "lead_h": 48,
+      "lat": 18.2,
+      "lon": 87.4,
+      "max_wind_kmh": 205,
+      "central_pressure_hpa": 950,
+      "category": "ESCS"
+     },
+     {
+      "time": "2020-05-20T05:30:00+05:30",
+      "lead_h": 60,
+      "lat": 19.9,
+      "lon": 87.9,
+      "max_wind_kmh": 185,
+      "central_pressure_hpa": 960,
+      "category": "ESCS"
+     },
+     {
+      "time": "2020-05-20T17:30:00+05:30",
+      "lead_h": 72,
+      "lat": 21.5,
+      "lon": 88.6,
+      "max_wind_kmh": 165,
+      "central_pressure_hpa": 968,
+      "category": "VSCS"
+     },
+     {
+      "time": "2020-05-21T05:30:00+05:30",
+      "lead_h": 84,
+      "lat": 23.5,
+      "lon": 89.3,
+      "max_wind_kmh": 85,
+      "central_pressure_hpa": 990,
+      "category": "CS"
+     }
+    ],
+    "expected_landfall": {
+     "area": "across the Sundarbans, between Digha (West Bengal) and Hatiya (Bangladesh)",
+     "time": "2020-05-20T14:30:00+05:30"
+    },
+    "official_surge_text": "about 4-5 m above astronomical tide"
+   }
+  },
+  {
+   "step": "T48",
+   "hours_before_landfall": 48,
+   "bulletin_no": "AMPHAN-2020/18",
+   "issued_at": "2020-05-18T17:30:00+05:30",
+   "bulletin_text": "INDIA METEOROLOGICAL DEPARTMENT – REPLAY SAMPLE\n*** Reconstructed for training/replay from publicly reported facts. NOT an official IMD product. ***\nTROPICAL CYCLONE ADVISORY BULLETIN\nBulletin No.: AMPHAN-2020/18\nIssued at: 1730 IST, 18 May 2020\nSub: Super Cyclonic Storm 'AMPHAN' over central Bay of Bengal – West Bengal – Bangladesh coasts\n\nThe Super Cyclonic Storm 'AMPHAN' lay centred at 1730 hours IST of 18 May 2020 near latitude 15.2°N and longitude 86.5°E. Estimated central pressure 930 hPa. It is very likely to move north-northeastwards, intensify up to 230 km/h and cross the West Bengal – Bangladesh coasts across the Sundarbans, between Digha (West Bengal) and Hatiya (Bangladesh) during the afternoon of 20 May 2020 with maximum sustained wind speed of 155-165 km/h gusting to 185 km/h.\n\nForecast track and intensity:\nDate/Time (IST) | Position (Lat °N / Long °E) | Max sustained surface wind (km/h) | Central pressure (hPa) | Category\n18.05.20/1730 | 15.2/86.5 | 220-230 gusting to 250 | 930 | SuCS\n18.05.20/2330 | 15.9/86.7 | 215-225 gusting to 245 | 935 | SuCS\n19.05.20/0530 | 16.6/86.8 | 210-220 gusting to 240 | 940 | ESCS\n19.05.20/1130 | 17.4/87.1 | 200-210 gusting to 230 | 945 | ESCS\n19.05.20/1730 | 18.2/87.3 | 195-205 gusting to 225 | 950 | ESCS\n20.05.20/0530 | 20.0/87.8 | 175-185 gusting to 205 | 960 | ESCS\n20.05.20/1730 | 21.6/88.5 | 155-165 gusting to 185 | 968 | VSCS\n21.05.20/0530 | 23.5/89.2 | 75-85 gusting to 105 | 990 | CS\n\nStorm surge: Storm surge of about 4-5 m above astronomical tide is likely to inundate low lying areas of South and North 24 Parganas districts at the time of landfall.\nSea condition: Phenomenal to very high. Fishermen are advised not to venture into the sea.\nNext bulletin: in 3 hours.",
+   "truth_parse": {
+    "cyclone_name": "Amphan",
+    "issued_at": "2020-05-18T17:30:00+05:30",
+    "track": [
+     {
+      "time": "2020-05-18T17:30:00+05:30",
+      "lead_h": 0,
+      "lat": 15.2,
+      "lon": 86.5,
+      "max_wind_kmh": 230,
+      "central_pressure_hpa": 930,
+      "category": "SuCS"
+     },
+     {
+      "time": "2020-05-18T23:30:00+05:30",
+      "lead_h": 6,
+      "lat": 15.9,
+      "lon": 86.7,
+      "max_wind_kmh": 225,
+      "central_pressure_hpa": 935,
+      "category": "SuCS"
+     },
+     {
+      "time": "2020-05-19T05:30:00+05:30",
+      "lead_h": 12,
+      "lat": 16.6,
+      "lon": 86.8,
+      "max_wind_kmh": 220,
+      "central_pressure_hpa": 940,
+      "category": "ESCS"
+     },
+     {
+      "time": "2020-05-19T11:30:00+05:30",
+      "lead_h": 18,
+      "lat": 17.4,
+      "lon": 87.1,
+      "max_wind_kmh": 210,
+      "central_pressure_hpa": 945,
+      "category": "ESCS"
+     },
+     {
+      "time": "2020-05-19T17:30:00+05:30",
+      "lead_h": 24,
+      "lat": 18.2,
+      "lon": 87.3,
+      "max_wind_kmh": 205,
+      "central_pressure_hpa": 950,
+      "category": "ESCS"
+     },
+     {
+      "time": "2020-05-20T05:30:00+05:30",
+      "lead_h": 36,
+      "lat": 20.0,
+      "lon": 87.8,
+      "max_wind_kmh": 185,
+      "central_pressure_hpa": 960,
+      "category": "ESCS"
+     },
+     {
+      "time": "2020-05-20T17:30:00+05:30",
+      "lead_h": 48,
+      "lat": 21.6,
+      "lon": 88.5,
+      "max_wind_kmh": 165,
+      "central_pressure_hpa": 968,
+      "category": "VSCS"
+     },
+     {
+      "time": "2020-05-21T05:30:00+05:30",
+      "lead_h": 60,
+      "lat": 23.5,
+      "lon": 89.2,
+      "max_wind_kmh": 85,
+      "central_pressure_hpa": 990,
+      "category": "CS"
+     }
+    ],
+    "expected_landfall": {
+     "area": "across the Sundarbans, between Digha (West Bengal) and Hatiya (Bangladesh)",
+     "time": "2020-05-20T15:30:00+05:30"
+    },
+    "official_surge_text": "about 4-5 m above astronomical tide"
+   }
+  },
+  {
+   "step": "T24",
+   "hours_before_landfall": 24,
+   "bulletin_no": "AMPHAN-2020/22",
+   "issued_at": "2020-05-19T17:30:00+05:30",
+   "bulletin_text": "INDIA METEOROLOGICAL DEPARTMENT – REPLAY SAMPLE\n*** Reconstructed for training/replay from publicly reported facts. NOT an official IMD product. ***\nTROPICAL CYCLONE ADVISORY BULLETIN\nBulletin No.: AMPHAN-2020/22\nIssued at: 1730 IST, 19 May 2020\nSub: Extremely Severe Cyclonic Storm 'AMPHAN' over central Bay of Bengal – West Bengal – Bangladesh coasts\n\nThe Extremely Severe Cyclonic Storm 'AMPHAN' lay centred at 1730 hours IST of 19 May 2020 near latitude 18.2°N and longitude 87.2°E. Estimated central pressure 950 hPa. It is very likely to move north-northeastwards, intensify up to 200 km/h and cross the West Bengal – Bangladesh coasts across the Sundarbans, between Digha (West Bengal) and Hatiya (Bangladesh) during the afternoon of 20 May 2020 with maximum sustained wind speed of 150-160 km/h gusting to 180 km/h.\n\nForecast track and intensity:\nDate/Time (IST) | Position (Lat °N / Long °E) | Max sustained surface wind (km/h) | Central pressure (hPa) | Category\n19.05.20/1730 | 18.2/87.2 | 190-200 gusting to 220 | 950 | ESCS\n19.05.20/2330 | 19.1/87.5 | 180-190 gusting to 210 | 955 | ESCS\n20.05.20/0530 | 20.0/87.7 | 170-180 gusting to 200 | 960 | ESCS\n20.05.20/1130 | 20.9/88.1 | 160-170 gusting to 190 | 965 | ESCS\n20.05.20/1730 | 21.6/88.4 | 150-160 gusting to 180 | 968 | VSCS\n21.05.20/0530 | 23.6/89.1 | 70-80 gusting to 100 | 990 | CS\n\nStorm surge: Storm surge of about 4-5 m above astronomical tide is likely to inundate low lying areas of South and North 24 Parganas districts at the time of landfall.\nSea condition: Phenomenal to very high. Fishermen are advised not to venture into the sea.\nNext bulletin: in 3 hours.",
+   "truth_parse": {
+    "cyclone_name": "Amphan",
+    "issued_at": "2020-05-19T17:30:00+05:30",
+    "track": [
+     {
+      "time": "2020-05-19T17:30:00+05:30",
+      "lead_h": 0,
+      "lat": 18.2,
+      "lon": 87.2,
+      "max_wind_kmh": 200,
+      "central_pressure_hpa": 950,
+      "category": "ESCS"
+     },
+     {
+      "time": "2020-05-19T23:30:00+05:30",
+      "lead_h": 6,
+      "lat": 19.1,
+      "lon": 87.5,
+      "max_wind_kmh": 190,
+      "central_pressure_hpa": 955,
+      "category": "ESCS"
+     },
+     {
+      "time": "2020-05-20T05:30:00+05:30",
+      "lead_h": 12,
+      "lat": 20.0,
+      "lon": 87.7,
+      "max_wind_kmh": 180,
+      "central_pressure_hpa": 960,
+      "category": "ESCS"
+     },
+     {
+      "time": "2020-05-20T11:30:00+05:30",
+      "lead_h": 18,
+      "lat": 20.9,
+      "lon": 88.1,
+      "max_wind_kmh": 170,
+      "central_pressure_hpa": 965,
+      "category": "ESCS"
+     },
+     {
+      "time": "2020-05-20T17:30:00+05:30",
+      "lead_h": 24,
+      "lat": 21.6,
+      "lon": 88.4,
+      "max_wind_kmh": 160,
+      "central_pressure_hpa": 968,
+      "category": "VSCS"
+     },
+     {
+      "time": "2020-05-21T05:30:00+05:30",
+      "lead_h": 36,
+      "lat": 23.6,
+      "lon": 89.1,
+      "max_wind_kmh": 80,
+      "central_pressure_hpa": 990,
+      "category": "CS"
+     }
+    ],
+    "expected_landfall": {
+     "area": "across the Sundarbans, between Digha (West Bengal) and Hatiya (Bangladesh)",
+     "time": "2020-05-20T16:30:00+05:30"
+    },
+    "official_surge_text": "about 4-5 m above astronomical tide"
+   }
+  },
+  {
+   "step": "T6",
+   "hours_before_landfall": 6,
+   "bulletin_no": "AMPHAN-2020/26",
+   "issued_at": "2020-05-20T11:30:00+05:30",
+   "bulletin_text": "INDIA METEOROLOGICAL DEPARTMENT – REPLAY SAMPLE\n*** Reconstructed for training/replay from publicly reported facts. NOT an official IMD product. ***\nTROPICAL CYCLONE ADVISORY BULLETIN\nBulletin No.: AMPHAN-2020/26\nIssued at: 1130 IST, 20 May 2020\nSub: Extremely Severe Cyclonic Storm 'AMPHAN' over central Bay of Bengal – West Bengal – Bangladesh coasts\n\nThe Extremely Severe Cyclonic Storm 'AMPHAN' lay centred at 1130 hours IST of 20 May 2020 near latitude 20.9°N and longitude 88.0°E. Estimated central pressure 965 hPa. It is very likely to move north-northeastwards, intensify up to 170 km/h and cross the West Bengal – Bangladesh coasts across the Sundarbans, between Digha (West Bengal) and Hatiya (Bangladesh) during the evening of 20 May 2020 with maximum sustained wind speed of 150-160 km/h gusting to 180 km/h.\n\nForecast track and intensity:\nDate/Time (IST) | Position (Lat °N / Long °E) | Max sustained surface wind (km/h) | Central pressure (hPa) | Category\n20.05.20/1130 | 20.9/88.0 | 160-170 gusting to 190 | 965 | ESCS\n20.05.20/1730 | 21.6/88.3 | 150-160 gusting to 180 | 968 | VSCS\n20.05.20/2330 | 22.6/88.5 | 110-120 gusting to 140 | 980 | VSCS\n21.05.20/0530 | 23.6/89.1 | 70-80 gusting to 100 | 990 | CS\n21.05.20/1130 | 24.3/89.4 | 55-65 gusting to 85 | 993 | CS\n\nStorm surge: Storm surge of about 4-5 m above astronomical tide is likely to inundate low lying areas of South and North 24 Parganas districts at the time of landfall.\nSea condition: Phenomenal to very high. Fishermen are advised not to venture into the sea.\nNext bulletin: in 3 hours.",
+   "truth_parse": {
+    "cyclone_name": "Amphan",
+    "issued_at": "2020-05-20T11:30:00+05:30",
+    "track": [
+     {
+      "time": "2020-05-20T11:30:00+05:30",
+      "lead_h": 0,
+      "lat": 20.9,
+      "lon": 88.0,
+      "max_wind_kmh": 170,
+      "central_pressure_hpa": 965,
+      "category": "ESCS"
+     },
+     {
+      "time": "2020-05-20T17:30:00+05:30",
+      "lead_h": 6,
+      "lat": 21.6,
+      "lon": 88.3,
+      "max_wind_kmh": 160,
+      "central_pressure_hpa": 968,
+      "category": "VSCS"
+     },
+     {
+      "time": "2020-05-20T23:30:00+05:30",
+      "lead_h": 12,
+      "lat": 22.6,
+      "lon": 88.5,
+      "max_wind_kmh": 120,
+      "central_pressure_hpa": 980,
+      "category": "VSCS"
+     },
+     {
+      "time": "2020-05-21T05:30:00+05:30",
+      "lead_h": 18,
+      "lat": 23.6,
+      "lon": 89.1,
+      "max_wind_kmh": 80,
+      "central_pressure_hpa": 990,
+      "category": "CS"
+     },
+     {
+      "time": "2020-05-21T11:30:00+05:30",
+      "lead_h": 24,
+      "lat": 24.3,
+      "lon": 89.4,
+      "max_wind_kmh": 65,
+      "central_pressure_hpa": 993,
+      "category": "CS"
+     }
+    ],
+    "expected_landfall": {
+     "area": "across the Sundarbans, between Digha (West Bengal) and Hatiya (Bangladesh)",
+     "time": "2020-05-20T17:30:00+05:30"
+    },
+    "official_surge_text": "about 4-5 m above astronomical tide"
+   }
+  }
+ ]
+}

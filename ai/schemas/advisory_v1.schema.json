@@ -1,0 +1,69 @@
+{
+  "$defs": {
+    "AdvisoryFields": {
+      "properties": {
+        "what": {
+          "description": "Hazard",
+          "title": "What",
+          "type": "string"
+        },
+        "where": {
+          "description": "Area",
+          "title": "Where",
+          "type": "string"
+        },
+        "when": {
+          "description": "Timing",
+          "title": "When",
+          "type": "string"
+        },
+        "action": {
+          "description": "What to do",
+          "title": "Action",
+          "type": "string"
+        },
+        "shelter": {
+          "description": "Where to go",
+          "title": "Shelter",
+          "type": "string"
+        },
+        "authority": {
+          "description": "Issuing authority",
+          "title": "Authority",
+          "type": "string"
+        }
+      },
+      "required": [
+        "what",
+        "where",
+        "when",
+        "action",
+        "shelter",
+        "authority"
+      ],
+      "title": "AdvisoryFields",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "headline": {
+      "title": "Headline",
+      "type": "string"
+    },
+    "fields": {
+      "$ref": "#/$defs/AdvisoryFields"
+    },
+    "text": {
+      "description": "Short, clear public message containing every mandatory field",
+      "title": "Text",
+      "type": "string"
+    }
+  },
+  "required": [
+    "headline",
+    "fields",
+    "text"
+  ],
+  "title": "AdvisoryDraft",
+  "type": "object"
+}
