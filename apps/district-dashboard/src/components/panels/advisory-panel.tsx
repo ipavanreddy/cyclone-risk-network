@@ -11,13 +11,17 @@ const SPEECH_LANG: Record<string, string> = { en: "en-IN", or: "or-IN", bn: "bn-
 const CHANNELS = ["sms", "messaging", "voice", "alert_feed"];
 const STATUS_COLOR: Record<string, string> = { draft: "bg-slate-500", approved: "bg-blue-600", sent: "bg-emerald-600" };
 
-async function speak(a: Advisory, setNote: (s: string) => void) {
-  const res = await apiPost<{ mode: string; audio_url: string | null; engine: string }>("/api/text-to-speech", { text: a.text, language: a.language });
+type Tts = { mode: string; audio_url: string | null; engine: string; gcs_uri?: string | null; note?: string };
+
+async function speak(a: Advisory, setNote: (s: string) => void, setAudio: (s: string | null) => void) {
+  const res = await apiPost<Tts>("/api/text-to-speech", { text: a.text, language: a.language, advisory_id: a.advisory_id });
   if (res.audio_url) {
-    setNote(`Playing ${res.engine} audio`);
+    setAudio(res.audio_url);
+    setNote(`Playing ${res.engine} audio${res.gcs_uri ? ` · archived to ${res.gcs_uri}` : ""}`);
     await new Audio(res.audio_url).play();
     return;
   }
+  setAudio(null);
   if (typeof window !== "undefined" && "speechSynthesis" in window) {
     const u = new SpeechSynthesisUtterance(a.text);
     u.lang = SPEECH_LANG[a.language] ?? "en-IN";
@@ -25,7 +29,7 @@ async function speak(a: Advisory, setNote: (s: string) => void) {
     if (voice) u.voice = voice;
     window.speechSynthesis.cancel();
     window.speechSynthesis.speak(u);
-    setNote(`Demo: browser speech preview (${u.lang}${voice ? "" : ", no matching voice installed – may read in default voice"})`);
+    setNote(`${res.note ? res.note + ". " : "Demo: "}Browser speech preview (${u.lang}${voice ? "" : ", no matching voice installed – may read in default voice"})`);
   } else {
     setNote("No speech synthesis available in this browser");
   }
@@ -38,6 +42,9 @@ function AdvisoryCard({ a, officer, onChange }: { a: Advisory; officer: string; 
   const [log, setLog] = useState<DispatchEntry[]>([]);
   const [note, setNote] = useState<string | null>(null);
   const [err, setErr] = useState<string | null>(null);
+  const [audio, setAudio] = useState<string | null>(null);
+  const [readback, setReadback] = useState<string | null>(null);
+  const [backTr, setBackTr] = useState<string | null>(null);
 
   async function run(fn: () => Promise<void>) {
     setErr(null);
@@ -71,7 +78,27 @@ function AdvisoryCard({ a, officer, onChange }: { a: Advisory; officer: string; 
       <p className="text-[11px] text-muted-foreground">{a.review_note} · prompt {a.prompt_version}</p>
       {a.notes.map((n) => <p key={n} className="text-[11px] text-amber-700">{n}</p>)}
       <div className="flex flex-wrap items-center gap-2">
-        <Button size="sm" variant="outline" onClick={() => run(() => speak(a, setNote))}>▶ Audio preview</Button>
+        <Button size="sm" variant="outline" onClick={() => run(() => speak(a, setNote, setAudio))}>▶ Audio preview</Button>
+        {audio && (
+          <Button size="sm" variant="outline" title="Cloud Speech-to-Text transcribes the generated audio so you can check it is intelligible"
+            onClick={() => run(async () => {
+              const r = await apiPost<{ mode: string; transcript: string | null; confidence?: number; note?: string }>(
+                "/api/speech-to-text", { audio_base64: audio, language: a.language });
+              setReadback(r.transcript ? `${r.transcript} (confidence ${r.confidence})` : r.note ?? "No speech recognised");
+            })}>
+            Read back audio (Speech-to-Text)
+          </Button>
+        )}
+        {a.language !== "en" && (
+          <Button size="sm" variant="outline" title="Cloud Translation back-translates the approved template so the reviewer can check meaning"
+            onClick={() => run(async () => {
+              const r = await apiPost<{ mode: string; text: string | null; note?: string }>(
+                "/api/translate", { text: a.text, source: a.language, target: "en" });
+              setBackTr(r.text ?? r.note ?? "Translation unavailable");
+            })}>
+            Back-translate to English
+          </Button>
+        )}
         {a.status === "draft" && (
           <>
             {a.language !== "en" && (
@@ -123,6 +150,8 @@ function AdvisoryCard({ a, officer, onChange }: { a: Advisory; officer: string; 
         </ul>
       )}
       {note && <p className="text-[11px] text-muted-foreground">{note}</p>}
+      {readback && <p className="rounded border p-2 text-[11px]" lang={a.language}><b>Speech-to-Text read-back:</b> {readback}</p>}
+      {backTr && <p className="rounded border p-2 text-[11px]"><b>Cloud Translation back-translation (reviewer aid, machine output):</b> {backTr}</p>}
       {cap && <pre className="max-h-64 overflow-auto rounded bg-muted p-2 text-[10px]">{cap}</pre>}
       {err && <p className="text-xs text-destructive">{err}</p>}
     </div>

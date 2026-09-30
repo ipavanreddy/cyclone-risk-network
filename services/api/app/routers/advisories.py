@@ -44,6 +44,14 @@ class TranslateIn(BaseModel):
 class TtsIn(BaseModel):
     text: str
     language: str = "en"
+    advisory_id: str | None = None
+
+
+class SttIn(BaseModel):
+    audio_base64: str
+    language: str = "en"
+    encoding: str = "MP3"
+    sample_rate_hz: int = 24000
 
 
 def _err(exc: Exception):
@@ -130,12 +138,20 @@ def translate(body: TranslateIn) -> dict:
 
 @router.post("/text-to-speech")
 def tts(body: TtsIn) -> dict:
-    return loc.text_to_speech(body.text, body.language)
+    return loc.text_to_speech(body.text, body.language, body.advisory_id)
+
+
+@router.post("/speech-to-text")
+def stt(body: SttIn) -> dict:
+    audio = body.audio_base64.split(",", 1)[-1]
+    if len(audio) > 1_400_000:
+        raise HTTPException(413, "audio too long for synchronous recognition (max ~1 minute)")
+    return loc.speech_to_text(audio, body.language, body.encoding, body.sample_rate_hz)
 
 
 @router.get("/status")
-def status() -> dict:
-    return integrations.status()
+def status(probe: bool = False) -> dict:
+    return integrations.status(probe=probe)
 
 
 @router.get("/states")

@@ -6,6 +6,7 @@ from datetime import datetime
 
 from google.genai import types
 
+from app import media
 from app.ai import orchestrator
 from app.ai.schemas import (
     AdvisoryDraftBrief,
@@ -193,11 +194,13 @@ def generate(result: dict, requested_by: str = "system", role: str = "District D
                                           lambda: demo_report(result), parts)
     report, corrections = validate(report, result)
     rid = f"SITREP-{sc['scenario_id']}-{uuid.uuid4().hex[:6]}"
+    png_uri = media.upload(f"sitrep-inputs/{rid}.png", png, "image/png")
     record = {
         "report_id": rid, "scenario_id": sc["scenario_id"], **report.model_dump(),
         "generated_at": prov.generated_at.isoformat(), "model_name": prov.model_name,
         "model_version": prov.model_version, "prompt_version": prov.prompt_version, "mode": mode,
         "inputs": {"hazard_map_png": f"/api/scenarios/{sc['scenario_id']}/hazards.png",
+                   "hazard_map_gcs_uri": png_uri,
                    "bulletin_no": sc["bulletin_no"], "image_bytes": len(png),
                    "multimodal": True, "context_fields": list(ctx.keys())},
         "validation": {"numbers_grounded": True, "corrections": corrections},

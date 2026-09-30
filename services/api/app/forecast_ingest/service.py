@@ -1,9 +1,13 @@
 """Bulletin parsing: Gemini (bulletin_parse_v1) with deterministic parser fallback and cross-check."""
+import hashlib
+import json
 from datetime import UTC, datetime
 from functools import lru_cache
 
+from app import integrations, media
 from app.ai import orchestrator
 from app.ai.schemas import BulletinParse
+from app.config import settings
 from app.forecast_ingest.parser import parse_bulletin
 from app.store import audit, get_store
 
@@ -45,7 +49,18 @@ def parse(text: str) -> dict:
 
 @lru_cache(maxsize=64)
 def _cached_parse(text: str) -> dict:
-    return parse(text)
+    """In-memory cache, backed by Cloud Storage for Gemini parses so Cloud Run cold starts do not re-call Gemini
+    for the same bulletin (key = bulletin text + model + prompt version)."""
+    key = hashlib.sha256(f"{settings.gemini_model}|bulletin_parse_v1|{text}".encode()).hexdigest()[:24]
+    path = f"cache/bulletin-parse/{key}.json"
+    if integrations.gemini_enabled() and media.exists(path):
+        cached = media.download(path)
+        if cached:
+            return json.loads(cached)
+    result = parse(text)
+    if result["mode"] == "gemini":
+        media.upload(path, json.dumps(result), "application/json")
+    return result
 
 
 def parse_for_scenario(scenario_id: str, text: str) -> dict:

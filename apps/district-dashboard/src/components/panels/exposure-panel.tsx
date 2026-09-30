@@ -1,6 +1,8 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Badge } from "@/components/ui/badge";
+import { apiGet } from "@/lib/api";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { BAND_COLOR, type Asset, type ScenarioSummary, type Village } from "@/lib/types";
 
@@ -18,7 +20,40 @@ export function RiskBar({ v }: { v: Village }) {
   );
 }
 
-export function VillageDetail({ v, assets }: { v: Village; assets: Asset[] }) {
+type RouteInfo = {
+  mode: string; google_locality: string | null;
+  google_route: { found: boolean; distance_km?: number; duration_min?: number; conditions?: string } | null;
+};
+
+/** Google Routes drive time (normal conditions) to the shelter our flood-aware road model says is reachable. */
+function GoogleRoute({ scenarioId, v }: { scenarioId: string; v: Village }) {
+  const [info, setInfo] = useState<{ key: string; data: RouteInfo | null } | null>(null);
+  const key = `${scenarioId}/${v.village_code}`;
+  useEffect(() => {
+    if (!v.shelter_reachable) return;
+    let live = true;
+    apiGet<RouteInfo>(`/api/scenarios/${scenarioId}/villages/${v.village_code}/route`)
+      .then((d) => live && setInfo({ key, data: d }))
+      .catch(() => live && setInfo({ key, data: null }));
+    return () => { live = false; };
+  }, [key, scenarioId, v.village_code, v.shelter_reachable]);
+  if (!v.shelter_reachable) return null;
+  if (!info || info.key !== key) return <p className="text-[11px] text-muted-foreground">Google Routes: checking…</p>;
+  const r = info.data?.google_route;
+  if (!info.data || info.data.mode !== "real" || !r?.found) {
+    return <p className="text-[11px] text-muted-foreground">Google Routes drive time unavailable (demo mode: straight network distance only).</p>;
+  }
+  return (
+    <p className="text-[11px]">
+      <Badge variant="outline" className="mr-1">Google Routes</Badge>
+      {r.distance_km} km · ~{r.duration_min} min drive in normal conditions
+      {info.data.google_locality && <> · {info.data.google_locality}</>}
+      <span className="text-muted-foreground"> (flood/surge cut-offs come from the TatRaksha road model, not Google)</span>
+    </p>
+  );
+}
+
+export function VillageDetail({ v, assets, scenarioId }: { v: Village; assets: Asset[]; scenarioId?: string }) {
   const shelter = assets.find((a) => a.asset_id === v.nearest_reachable_shelter);
   return (
     <div className="space-y-2 rounded-lg border p-3">
@@ -42,15 +77,16 @@ export function VillageDetail({ v, assets }: { v: Village; assets: Asset[] }) {
           ? <>Nearest reachable safe shelter: <b>{shelter?.name ?? v.nearest_reachable_shelter}</b> ({v.shelter_distance_km} km by road)</>
           : <span className="text-destructive">No safe shelter reachable by road within 30 km</span>}
       </p>
+      {scenarioId && <GoogleRoute scenarioId={scenarioId} v={v} />}
     </div>
   );
 }
 
-export function VillagesPanel({ villages, assets, selected, onSelect }: { villages: Village[]; assets: Asset[]; selected: string | null; onSelect: (c: string) => void }) {
+export function VillagesPanel({ villages, assets, selected, onSelect, scenarioId }: { villages: Village[]; assets: Asset[]; selected: string | null; onSelect: (c: string) => void; scenarioId?: string }) {
   const sel = villages.find((v) => v.village_code === selected);
   return (
     <div className="space-y-3">
-      {sel && <VillageDetail v={sel} assets={assets} />}
+      {sel && <VillageDetail v={sel} assets={assets} scenarioId={scenarioId} />}
       <p className="text-xs text-muted-foreground">
         Village Risk = Surge 30 · Rainfall flood 25 · Wind 15 · Population 15 · Vulnerability 15 (transparent weighted model). Click a row or map circle.
       </p>

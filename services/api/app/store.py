@@ -1,14 +1,17 @@
-"""Document store adapter: Firestore when FIREBASE_PROJECT_ID is set, else local SQLite (demo).
-Audit/dispatch events are also streamed to BigQuery when GOOGLE_CLOUD_PROJECT is set."""
+"""Document store adapter: Firestore when FIREBASE_PROJECT_ID is set (and the database exists), else local
+SQLite (demo). Audit/dispatch events are also streamed to BigQuery when GOOGLE_CLOUD_PROJECT is set; the tables
+(schemas in infrastructure/bigquery/) are created inside the existing dataset on first use."""
 import json
 import sqlite3
 import threading
+from concurrent.futures import ThreadPoolExecutor
 from datetime import UTC, datetime
+from functools import lru_cache
 from pathlib import Path
 from typing import Protocol
 
 from app import integrations
-from app.config import settings
+from app.config import REPO_ROOT, settings
 
 
 class Store(Protocol):
@@ -59,6 +62,10 @@ class FirestoreStore:
         app = firebase_admin.initialize_app(options={"projectId": project}) if not firebase_admin._apps else None
         self._db = firestore.client(app)
 
+    def probe(self) -> None:
+        """Raises if the Firestore database does not exist / is not reachable."""
+        self._db.collection("_probe").document("status").get()
+
     def put(self, collection: str, doc_id: str, doc: dict) -> None:
         body = json.loads(json.dumps(doc, default=str))
         body["_written_at"] = datetime.now(UTC).isoformat()
@@ -85,7 +92,10 @@ def get_store() -> Store:
     if _store is None:
         if integrations.firestore_enabled():
             try:
-                _store = FirestoreStore(settings.firebase_project_id)
+                fs = FirestoreStore(settings.firebase_project_id)
+                fs.probe()
+                _store = fs
+                integrations.clear_error("firestore")
             except Exception as exc:  # noqa: BLE001
                 integrations.record_error("firestore", exc)
         if _store is None:
@@ -104,21 +114,53 @@ def audit(event: str, actor: str, role: str, details: dict) -> dict:
     now = datetime.now(UTC).isoformat()
     row = {"event": event, "actor": actor, "role": role, "at": now, "details": details}
     get_store().put("audit_log", f"{now}-{event}-{details.get('id', '')}", row)
-    _bigquery_insert("audit_log", {"event": event, "actor": actor, "role": role, "at": now,
-                                   "details": json.dumps(details, default=str)})
+    bigquery_log("audit_log", {"event": event, "actor": actor, "role": role, "event_time": now,
+                               "details": json.dumps(details, default=str)})
     return row
 
 
-def _bigquery_insert(table: str, row: dict) -> None:
-    if not integrations.bigquery_enabled():
-        return
-    try:
-        from google.cloud import bigquery
+SCHEMA_DIR = REPO_ROOT / "infrastructure" / "bigquery"
+BQ_TABLES = ("audit_log", "dispatch_log")
+_bq_pool = ThreadPoolExecutor(max_workers=2, thread_name_prefix="bq")
 
-        client = bigquery.Client(project=settings.google_cloud_project)
-        errors = client.insert_rows_json(f"{settings.google_cloud_project}.{settings.bigquery_dataset}.{table}", [row])
+
+@lru_cache
+def _bq_client():
+    from google.cloud import bigquery
+
+    return bigquery.Client(project=settings.google_cloud_project)
+
+
+@lru_cache
+def ensure_bigquery_tables() -> bool:
+    """Create the event tables inside the existing dataset if missing (never creates the dataset)."""
+    from google.cloud import bigquery
+
+    client = _bq_client()
+    client.get_dataset(f"{settings.google_cloud_project}.{settings.bigquery_dataset}")
+    for table in BQ_TABLES:
+        schema = [bigquery.SchemaField(f["name"], f["type"], mode=f.get("mode", "NULLABLE"),
+                                       description=f.get("description"))
+                  for f in json.loads((SCHEMA_DIR / f"{table}.schema.json").read_text())]
+        t = bigquery.Table(f"{settings.google_cloud_project}.{settings.bigquery_dataset}.{table}", schema=schema)
+        t.time_partitioning = bigquery.TimePartitioning(field="event_time")
+        client.create_table(t, exists_ok=True)
+    return True
+
+
+def _bigquery_insert(table: str, row: dict) -> None:
+    try:
+        ensure_bigquery_tables()
+        errors = _bq_client().insert_rows_json(
+            f"{settings.google_cloud_project}.{settings.bigquery_dataset}.{table}", [row])
         if errors:
             raise RuntimeError(errors)
         integrations.clear_error("bigquery")
     except Exception as exc:  # noqa: BLE001
         integrations.record_error("bigquery", exc)
+
+
+def bigquery_log(table: str, row: dict) -> None:
+    """Stream one event row to BigQuery in the background (never blocks or fails the request)."""
+    if integrations.bigquery_enabled():
+        _bq_pool.submit(_bigquery_insert, table, row)

@@ -3,10 +3,11 @@ import json
 import uuid
 from datetime import UTC, datetime, timedelta, timezone
 
+from app import media
 from app.advisories_cap import cap, dispatch, templates
 from app.ai import orchestrator
 from app.ai.schemas import AdvisoryDraft
-from app.store import audit, get_store
+from app.store import audit, bigquery_log, get_store
 
 DDMO = "District Disaster Management Officer"
 STATE_EOC = "State EOC Officer"
@@ -133,6 +134,7 @@ def approve(aid: str, approved_by: str, role: str, edited_text: str | None, tran
     errors = cap.validate(rec["cap_xml"])
     if errors:
         raise AdvisoryError(f"CAP validation failed: {errors}")
+    rec["cap_gcs_uri"] = media.upload(f"cap/{aid}.xml", rec["cap_xml"], "application/cap+xml")
     rec.update({"status": "approved", "approved_by": approved_by, "approved_role": role,
                 "approved_at": now.isoformat(), "translation_reviewed": translation_reviewed})
     get_store().put("advisories", aid, rec)
@@ -163,6 +165,9 @@ def dispatch_advisory(aid: str, channels: list[str], dispatched_by: str, role: s
                  "state": rec["state"], "language": rec["language"], "village_code": rec["village_code"],
                  "at": now, "by": dispatched_by, "role": role, **res}
         get_store().put("dispatch_log", entry["log_id"], entry)
+        bigquery_log("dispatch_log", {k: entry.get(k) for k in (
+            "log_id", "advisory_id", "scenario_id", "state", "language", "village_code", "channel", "provider",
+            "status", "simulated", "role")} | {"event_time": now, "dispatched_by": dispatched_by})
         entries.append(entry)
     rec.update({"status": "sent", "sent_at": now})
     get_store().put("advisories", aid, rec)

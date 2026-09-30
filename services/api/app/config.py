@@ -1,8 +1,10 @@
+import os
 from pathlib import Path
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+# Repo root (ai/, data/, geospatial/ live here). The container mirrors the repo layout under /repo.
+REPO_ROOT = Path(os.environ.get("REPO_ROOT") or Path(__file__).resolve().parents[3])
 
 
 class Settings(BaseSettings):
@@ -14,6 +16,10 @@ class Settings(BaseSettings):
     google_genai_use_vertexai: bool = False
     google_cloud_project: str = ""
     google_cloud_location: str = "asia-south1"
+    # Vertex AI location for Gemini. Gemini 3.x models are served from the "global" endpoint.
+    gemini_location: str = "global"
+    # Local dev only: service-account JSON. Exported to os.environ so Google client libraries find it.
+    google_application_credentials: str = ""
     bigquery_dataset: str = "cyclone_risk_network"
     gcs_bucket: str = ""
     firebase_project_id: str = ""
@@ -21,7 +27,8 @@ class Settings(BaseSettings):
     earth_engine_project: str = ""
     cors_origins: str = "http://localhost:3050,http://localhost:3051"
 
-    # Cloud Translation + Text-to-Speech REST (API key restricted to those two APIs)
+    # Cloud Translation + Text-to-Speech + Speech-to-Text REST key. (Not named GOOGLE_API_KEY on purpose:
+    # google-genai would pick that name up as a Gemini API key.)
     google_cloud_api_key: str = ""
     # Sandbox dispatch. SMS: Twilio test credentials "ACCOUNT_SID:AUTH_TOKEN"; messaging: Telegram bot token.
     sms_sandbox_key: str = ""
@@ -37,3 +44,6 @@ class Settings(BaseSettings):
 
 
 settings = Settings()
+
+if settings.google_application_credentials and not os.environ.get("GOOGLE_APPLICATION_CREDENTIALS"):
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = settings.google_application_credentials

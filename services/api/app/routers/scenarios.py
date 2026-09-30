@@ -2,7 +2,7 @@
 from fastapi import APIRouter, HTTPException, Query, Response
 from pydantic import BaseModel
 
-from app import pipeline
+from app import maps, pipeline
 from app.forecast_ingest import service as ingest
 from app.geospatial import earth_engine
 from app.render import hazard_png
@@ -156,6 +156,39 @@ def shelters(scenario_id: str) -> dict:
             "shelters": [a for a in r["assets"] if a["type"] == "shelter"],
             "villages": [{k: v[k] for k in ("village_code", "name", "shelter_reachable", "nearest_reachable_shelter",
                                             "shelter_distance_km")} for v in r["villages"]]}
+
+
+@router.get("/scenarios/{scenario_id}/villages/{village_code}/route")
+def village_route(scenario_id: str, village_code: str) -> dict:
+    """Google Routes drive time (normal conditions) from a village to its nearest shelter that our flood/surge
+    road-network model still considers reachable, plus the Google-geocoded locality."""
+    r = result_or_404(scenario_id)
+    v = next((x for x in r["villages"] if x["village_code"] == village_code), None)
+    if v is None:
+        raise HTTPException(404, f"unknown village {village_code}")
+    shelter = next((a for a in r["assets"] if a["asset_id"] == v["nearest_reachable_shelter"]), None)
+    route = maps.drive_route(v["lat"], v["lon"], shelter["lat"], shelter["lon"]) if shelter else None
+    return {"scenario_id": scenario_id, "village_code": village_code, "village": v["name"],
+            "shelter_reachable": v["shelter_reachable"],
+            "shelter": {k: shelter[k] for k in ("asset_id", "name", "lat", "lon")} if shelter else None,
+            "network_distance_km": v["shelter_distance_km"], "google_route": route,
+            "google_locality": maps.reverse_geocode(round(v["lat"], 4), round(v["lon"], 4)),
+            "mode": "real" if route else "demo"}
+
+
+@router.get("/geocode")
+def geocode(q: str = Query(min_length=3, max_length=200)) -> dict:
+    from app import integrations
+
+    if not integrations.maps_enabled():
+        return {"query": q, "mode": "demo", "found": False, "note": "MAPS_API_KEY not configured"}
+    try:
+        res = maps.geocode(q)
+        integrations.clear_error("maps_routes")
+        return {"mode": "real", **res}
+    except Exception as exc:  # noqa: BLE001
+        integrations.record_error("maps_routes", exc)
+        raise HTTPException(502, "geocoding failed") from None
 
 
 @router.post("/scenarios/{scenario_id}/sitrep")

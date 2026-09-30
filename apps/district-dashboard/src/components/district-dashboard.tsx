@@ -198,7 +198,7 @@ export function DistrictDashboard() {
               </TabsList>
               <div className="max-h-[640px] overflow-y-auto pr-1">
                 <TabsContent value="forecast"><ForecastPanel s={s} officer={officer} onChanged={refresh} /></TabsContent>
-                <TabsContent value="villages"><VillagesPanel villages={current.villages} assets={current.assets} selected={selected} onSelect={setSelected} /></TabsContent>
+                <TabsContent value="villages"><VillagesPanel villages={current.villages} assets={current.assets} selected={selected} onSelect={setSelected} scenarioId={s.scenario.scenario_id} /></TabsContent>
                 <TabsContent value="assets"><AssetsPanel s={s} assets={current.assets} /></TabsContent>
                 <TabsContent value="sitrep">
                   <SitrepPanel scenarioId={s.scenario.scenario_id} sitrep={current.sitrep} officer={officer}

@@ -15,7 +15,8 @@ def test_status_reports_demo_mode_for_every_backend_integration():
     st = integrations.status()
     assert st["demo_mode"] is True and st["sample_data"] is True
     modes = {i["name"]: i["mode"] for i in st["integrations"]}
-    assert set(modes) >= {"gemini", "earth_engine", "translation_tts", "firestore", "bigquery", "sms", "messaging"}
+    assert set(modes) >= {"gemini", "earth_engine", "translation", "text_to_speech", "speech_to_text", "maps_routes",
+                          "cloud_storage", "firestore", "bigquery", "sms", "messaging"}
     assert all(m == "demo" for m in modes.values())
 
 
@@ -86,3 +87,13 @@ def test_datasets_carry_metadata():
         for meta in load_replay(rid).metadata.values():
             assert meta.source and meta.reference_timestamp and meta.dataset_version and meta.geographic_scope
             assert meta.is_sample is True
+
+
+def test_speech_to_text_and_maps_demo(client):
+    r = client.post("/api/speech-to-text", json={"audio_base64": "AAAA", "language": "bn"}).json()
+    assert r["mode"] == "demo" and r["transcript"] is None
+    route = client.get("/api/scenarios/FANI-2019-T24/villages").json()[0]
+    r = client.get(f"/api/scenarios/FANI-2019-T24/villages/{route['village_code']}/route").json()
+    assert r["mode"] == "demo" and r["google_route"] is None
+    assert client.get("/api/scenarios/FANI-2019-T24/villages/NOPE/route").status_code == 404
+    assert client.get("/api/geocode", params={"q": "Puri, Odisha"}).json()["mode"] == "demo"

@@ -25,9 +25,21 @@ def _ee_module(name: str):
 @lru_cache
 def _init() -> bool:
     import ee
+    import google.auth
 
-    ee.Initialize(project=settings.earth_engine_project)
+    # Service account / ADC credentials (Cloud Run SA or GOOGLE_APPLICATION_CREDENTIALS locally).
+    creds, _ = google.auth.default(scopes=["https://www.googleapis.com/auth/earthengine",
+                                           "https://www.googleapis.com/auth/cloud-platform"])
+    ee.Initialize(creds, project=settings.earth_engine_project)
     return True
+
+
+def probe() -> None:
+    """Live check used by the integration status probe (raises if the project is not registered)."""
+    import ee
+
+    _init()
+    ee.Number(1).getInfo()
 
 
 def _cached(key: str, fn):

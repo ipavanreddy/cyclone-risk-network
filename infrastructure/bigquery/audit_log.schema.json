@@ -1,0 +1,7 @@
+[
+  {"name": "event", "type": "STRING", "mode": "REQUIRED", "description": "e.g. advisory_approved, sitrep_generated"},
+  {"name": "actor", "type": "STRING", "description": "Officer name (demo)"},
+  {"name": "role", "type": "STRING", "description": "District Disaster Management Officer | State EOC Officer"},
+  {"name": "event_time", "type": "TIMESTAMP", "mode": "REQUIRED"},
+  {"name": "details", "type": "STRING", "description": "JSON details"}
+]
