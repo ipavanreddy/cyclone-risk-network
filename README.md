@@ -6,7 +6,7 @@ routing shows which shelters get cut off, and the District Disaster Management O
 in Odia, Bengali and English with voice, while the State EOC compares districts and sees parametric trigger estimates.
 
 Build with AI (Google) hackathon, Track 5 · Full spec: [docs/PRD.md](docs/PRD.md) · Submission pack: [docs/SUBMISSION.md](docs/SUBMISSION.md) ·
-Pitch deck: [docs/pitch/](docs/pitch/)
+Pitch deck: [docs/pitch/TatRaksha_Spontom_Pitch.pptx](docs/pitch/TatRaksha_Spontom_Pitch.pptx) ([PDF](docs/pitch/TatRaksha_Spontom_Pitch.pdf))
 
 ## Live URLs
 

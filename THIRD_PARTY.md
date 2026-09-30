@@ -94,7 +94,8 @@ transparent formulas written for this project (see `geospatial/earth-engine/READ
 | uv | Apache-2.0 / MIT | https://github.com/astral-sh/uv | Python env + image (`ghcr.io/astral-sh/uv`) |
 | pnpm | MIT | https://pnpm.io | JS workspace |
 | python:3.12-slim, node:22-slim | PSF / MIT (+ Debian) | https://hub.docker.com/_/python, https://hub.docker.com/_/node | Base images |
-| python-pptx | MIT | https://github.com/scanny/python-pptx | Generates the pitch deck (`docs/pitch/build_deck.py`) |
+| PptxGenJS 4.0.1 | MIT | https://github.com/gitbrent/PptxGenJS | Generates the pitch deck (`docs/pitch/build-deck.js`) |
+| Playwright (Python, with the local Chrome) | Apache-2.0 | https://playwright.dev | Captures the app screenshots used in the pitch deck |
 
 ## Sample / synthetic data created for this project
 
@@ -104,3 +105,9 @@ village populations and vulnerability indices, shelter/substation/hospital locat
 network, "observed" flood flags for validation, and parametric policies. Village names are real places
 with approximate coordinates; codes are `SAMPLE-*` (not real LGD codes). Advisory templates in Odia and
 Bengali are sample translations pending native-speaker review.
+
+## Pitch deck images
+
+All images in `docs/pitch/assets/` except the Spontom logo are screenshots of this app running locally on the
+Fani 2019 replay (sample data), captured 30 Sep 2026. Map tiles in them are © OpenStreetMap contributors (ODbL),
+credited on the slides. No AI-generated images are used (Imagen was not available in the project).
