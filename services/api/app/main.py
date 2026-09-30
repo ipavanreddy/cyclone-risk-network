@@ -3,7 +3,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app import integrations
+from app import integrations, pipeline
 from app.config import settings
 from app.routers import advisories, parametric, scenarios
 
@@ -11,6 +11,7 @@ from app.routers import advisories, parametric, scenarios
 @asynccontextmanager
 async def lifespan(_: FastAPI):
     integrations.start_probe()
+    pipeline.start_warmup()
     yield
 
 

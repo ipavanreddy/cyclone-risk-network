@@ -46,6 +46,10 @@ def record_error(name: str, err: Exception | str) -> None:
     _verified.pop(name, None)
 
 
+def all_integrations_error(name: str) -> str | None:
+    return _runtime_errors.get(name)
+
+
 def clear_error(name: str) -> None:
     _runtime_errors.pop(name, None)
     _verified[name] = datetime.now(UTC).isoformat(timespec="seconds")

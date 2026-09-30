@@ -230,3 +230,26 @@ def freshness(replay: Replay, step: dict, base) -> list[dict]:
         {"source": "Road network", "timestamp": replay.metadata["roads"].reference_timestamp,
          "note": replay.metadata["roads"].source, "is_sample": True},
     ]
+
+
+def start_warmup() -> None:
+    """Pre-compute every replay step in the background at startup (Gemini parses come from the Cloud Storage
+    cache), so the first dashboard request after a Cloud Run cold start is fast. Skipped in forced demo mode."""
+    import logging
+    import threading
+
+    from app.config import settings
+    from app.replays import list_replays
+
+    if settings.force_demo_mode:
+        return
+
+    def warm() -> None:
+        for rp in list_replays():
+            for st in rp["steps"]:
+                try:
+                    run(st["scenario_id"])
+                except Exception as exc:  # noqa: BLE001
+                    logging.getLogger(__name__).warning("warm-up %s failed: %s", st["scenario_id"], exc)
+
+    threading.Thread(target=warm, name="pipeline-warmup", daemon=True).start()

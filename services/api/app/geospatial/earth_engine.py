@@ -22,8 +22,31 @@ def _ee_module(name: str):
     return importlib.import_module(f"tatraksha_ee.{name}")
 
 
-@lru_cache
+_last_failure: dict[str, float] = {}
+RETRY_AFTER_S = 600
+
+
 def _init() -> bool:
+    """Initialise once; after a failure (e.g. project not registered) do not retry for 10 minutes, so every
+    request does not pay for a slow failing handshake."""
+    import time
+
+    failed_at = _last_failure.get("init")
+    if failed_at and time.monotonic() - failed_at < RETRY_AFTER_S:
+        raise RuntimeError(integrations_error() or "Earth Engine initialisation failed recently")
+    try:
+        return _do_init()
+    except Exception:
+        _last_failure["init"] = time.monotonic()
+        raise
+
+
+def integrations_error() -> str | None:
+    return integrations.all_integrations_error("earth_engine")
+
+
+@lru_cache
+def _do_init() -> bool:
     import ee
     import google.auth
 
