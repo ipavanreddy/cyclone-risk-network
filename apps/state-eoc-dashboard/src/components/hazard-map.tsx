@@ -131,6 +131,8 @@ export function HazardMap({ features, onSelect, height = 560 }: { features: MapF
   const el = useRef<HTMLDivElement>(null);
   const driver = useRef<Driver | null>(null);
   const [ready, setReady] = useState(false);
+  // Google reports key/referrer problems via window.gm_authFailure after the script has loaded; fall back then too.
+  const [googleOk, setGoogleOk] = useState(Boolean(MAPS_KEY));
   const [provider, setProvider] = useState<string>(MAPS_KEY ? "Google Maps" : "Leaflet + OpenStreetMap (demo fallback)");
   const fitted = useRef<string>("");
   const onSelectRef = useRef(onSelect);
@@ -143,26 +145,35 @@ export function HazardMap({ features, onSelect, height = 560 }: { features: MapF
     let cancelled = false;
     const node = el.current;
     if (!node) return;
-    const make = MAPS_KEY
-      ? googleDriver(node).catch(() => {
-          setProvider("Leaflet + OpenStreetMap (Google Maps failed to load)");
-          return leafletDriver(node);
-        })
-      : leafletDriver(node);
+    const fallback = (why: string) => {
+      setProvider(`Leaflet + OpenStreetMap (${why})`);
+      node.innerHTML = "";
+      return leafletDriver(node);
+    };
+    if (googleOk) {
+      (window as unknown as { gm_authFailure?: () => void }).gm_authFailure = () => {
+        if (!cancelled) setGoogleOk(false);
+      };
+    }
+    const make = googleOk
+      ? googleDriver(node).catch(() => fallback("Google Maps failed to load"))
+      : MAPS_KEY ? fallback("Google Maps key not authorised for this URL") : leafletDriver(node);
     make.then((d) => {
       if (cancelled) {
         d.destroy();
         return;
       }
       driver.current = d;
+      fitted.current = "";
       setReady(true);
     });
     return () => {
       cancelled = true;
+      setReady(false);
       driver.current?.destroy();
       driver.current = null;
     };
-  }, []);
+  }, [googleOk]);
 
   useEffect(() => {
     if (!ready || !driver.current || !features) return;
