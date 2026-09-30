@@ -1,0 +1,20 @@
+# Build context is the repo root for every image (API + both Next.js apps).
+.git
+**/node_modules
+**/.next
+**/.venv
+**/__pycache__
+**/.pytest_cache
+**/.ruff_cache
+services/api/.data
+services/api/tests
+data/cache
+data/raw
+docs
+# never ship local secrets; apps/*/.env.production (public NEXT_PUBLIC_* values) is generated at deploy time
+.env
+**/.env
+**/.env.local
+**/*.pem
+**/service-account*.json
+**/*-credentials.json

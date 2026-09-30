@@ -19,3 +19,6 @@ next-env.d.ts
 data/raw/
 data/cache/
 services/api/.data/
+
+# generated at deploy time (public NEXT_PUBLIC_* build values; never commit)
+.env.production
