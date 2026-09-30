@@ -123,6 +123,62 @@ export function ForecastPanel({ s, officer, onChanged }: { s: ScenarioSummary; o
         <summary className="cursor-pointer text-sm font-medium">Bulletin text</summary>
         <pre className="mt-2 max-h-72 overflow-auto whitespace-pre-wrap rounded bg-muted p-2 text-[11px]">{b.text}</pre>
       </details>
+
+      <BulletinParser initial={b.text} />
     </div>
+  );
+}
+
+type ParseResult = ScenarioSummary["bulletin"];
+
+/** FR-01: paste any IMD-style bulletin and have it parsed (Gemini, cross-checked by the deterministic parser). */
+function BulletinParser({ initial }: { initial: string }) {
+  const [text, setText] = useState(initial);
+  const [res, setRes] = useState<ParseResult | null>(null);
+  const [busy, setBusy] = useState(false);
+  const [err, setErr] = useState<string | null>(null);
+
+  async function parse() {
+    setBusy(true);
+    setErr(null);
+    try {
+      setRes(await apiPost<ParseResult>("/api/bulletins/parse", { text }));
+    } catch (e) {
+      setErr(String(e));
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  return (
+    <details className="rounded-lg border p-3">
+      <summary className="cursor-pointer text-sm font-medium">Paste a new bulletin to parse</summary>
+      <textarea className="mt-2 h-40 w-full rounded border bg-background p-2 font-mono text-[11px]" value={text}
+        onChange={(e) => setText(e.target.value)} aria-label="Bulletin text" />
+      <div className="mt-2 flex items-center gap-2">
+        <Button size="sm" onClick={parse} disabled={busy || text.trim().length < 40}>{busy ? "Parsing…" : "Parse bulletin"}</Button>
+        <span className="text-[11px] text-muted-foreground">Extraction only – the officer still verifies the track.</span>
+      </div>
+      {err && <p className="mt-1 text-xs text-destructive">{err}</p>}
+      {res && (
+        <div className="mt-2 space-y-1 text-xs">
+          <p>
+            <Badge variant={res.mode === "gemini" ? "default" : "outline"} className="mr-1">
+              {res.mode === "gemini" ? res.provenance.model_name : "demo parser"}
+            </Badge>
+            {res.parse.cyclone_name} · {res.parse.track.length} track points · landfall {res.parse.expected_landfall.area} ·
+            confidence {Math.round(res.parse.confidence * 100)}%
+          </p>
+          <p className="text-muted-foreground">
+            Cross-check vs {res.cross_check.method}: {res.cross_check.discrepancies.length ? res.cross_check.discrepancies.join("; ") : "no discrepancies"}
+          </p>
+          <ul className="font-mono text-[11px]">
+            {res.parse.track.map((p) => (
+              <li key={p.time}>{fmtTime(p.time).replace(" IST", "")} · {p.lat.toFixed(1)}°N {p.lon.toFixed(1)}°E · {p.max_wind_kmh} km/h · {p.category}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </details>
   );
 }
